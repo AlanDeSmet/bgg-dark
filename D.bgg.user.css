@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.1
+@version        0.8.2
 @description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -73,12 +73,15 @@
 @var	range		fontSizeS			"Font size S"							[13,6,24,1,"px"]
 
 == options ==
+@var	checkbox	maxWidth			'Use full screen width?'				1
 @var	checkbox	ernie				'Ernie! (old cornerlogo)?'				0
 @var	checkbox	announcementHide	'Hide announcements?'					0
 @var	checkbox	contestHide			'Hide contests and results?'			0
 @var	checkbox	geekpreviewHide		'Hide geekpreviews (GenCon, Essen)?'	0
-@var	checkbox	promotedVideoHide	'Hide promoted videos on game pages?'	0
-@var	checkbox	recommendationsHide	'Hide recommended "Fans Also Like"?'	0
+@var	checkbox	promotedVideoHide	'Hide promoted videos on game pages?'	1
+@var	checkbox	recommendationsHide	'Hide recommended "Fans Also Like"?'	1
+@var	checkbox	floatLeftNav		'Float left navigator lists?'			1
+
 
 ==/UserStyle== */
 
@@ -111,6 +114,7 @@
 		--linkSelected: linkSelected;
 		--linkVisited: linkVisited;
 		--linkUnderlineStyle: linkUnderlineStyle;
+		--maxWidth: maxWidth;
 		--mainBg: mainBg;
 		--mainBg2: mainBg2;
 		--menuBg: menuBg;
@@ -125,6 +129,7 @@
 		--quoteBg: quoteBg;
 		--quoteColor: quoteColor;
 		--quoteBorder: 1px solid quoteBorderColor;
+		--floatLeftNav: floatLeftNav;
 		--tableColor2n: tableColor2n;
 		--tableColor2n1: tableColor2n1;
 		--textColor: textColor;
@@ -132,6 +137,23 @@
 		--textPositive: textPositive;
 	}
 
+	
+	/* max width? */
+	if maxWidth {
+		.container-fluid {
+	    	max-width: none;
+		}
+	}
+	
+	/* floating navigation? */
+	if floatLeftNav {
+		.global-body-content-container .global-secondary-nav, .sidebar-type-embedded {
+    		width: 200px !important;
+		    position: sticky;
+		    top: 72px;
+			}
+	}
+	
 	/* header */
 	if ernie {
 		div.global-header-logo > a > img {
