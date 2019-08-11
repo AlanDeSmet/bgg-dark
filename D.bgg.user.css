@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.0
+@version        0.8.1
 @description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -259,8 +259,11 @@
 		filter: opacity(60%);
 	}
 	/* links */
-	a, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, ul.global-secondary-nav-links a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a {
-		color: var(--linkColor) !important;
+	a, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a {
+		color: var(--linkColor) 
+	}
+	ul.global-secondary-nav-links a {
+		color: var(--textColor) !important;
 	}
 	a:hover, .btn:hover {
 		color: var(--linkHover) !important;
