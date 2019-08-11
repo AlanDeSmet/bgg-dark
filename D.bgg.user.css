@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.7
+@version        0.8.7a
 @description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -20,14 +20,14 @@
 @var	color		moduleHGrad0		'Module header bg: gradient (top)'		#446
 @var	color		moduleHGrad1		'… gradient end (bottom)'				#446
 @var	color		moduleHColor		'Module header text'					#eee
-@var	color		moduleBorderColor	'Border of modules, posts etc.'			#777
+@var	color		moduleBorderColor	'Border of modules, posts etc.'			#555
 
 @var	color		fpColor2n			'Frontpage: bg of even rows'			#000
 @var	color		fpColor2n1			'… bg of odd rows'						#111
 @var	checkbox	fpRowBottomBorder	'Bottom border of rows in modules'		0
 
 @var	color		menuBg				'Background of menus, dropdowns etc.'	#222
-@var	color		menuBorderColor		'Border color of menus, dropdowns etc.'	#888
+@var	color		menuBorderColor		'Border color of menus, dropdowns etc.'	#666
 
 @var	color		tableColor2n		'Tables: bg of even rows'				#000
 @var	color		tableColor2n1		'… bg of odd rows'						#111
@@ -44,8 +44,8 @@
 @var	color		quoteColor			'Quote body text'						#ccc
 
 == articles ==
-@var	color		articleSelected		'Border of selected article'			#aaf
-@var	color		articleNew			'Border of new article'					#f50
+@var	color		articleSelected		'Border of selected article'			#dc6
+@var	color		articleNew			'Border of new article'					#c8d
 
 == text colors ==
 @var	color		textPositive		'Text: positive values'					#4a4
