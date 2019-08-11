@@ -53,7 +53,7 @@
 @var	color		editHover			'Edit hover (games/collection view)'	#fdad2f
 
 == links ==
-@var	color		linkColor			'Links'									#55a
+@var	color		linkColor			'Links'									#88c
 @var	color		linkHover			'Link hover'							#f50
 @var	color		linkSelected		'Link selected'							#f50
 @var	color		linkVisited			'Link visited'							#66c
@@ -198,6 +198,7 @@
 	}
 	.global-secondary-nav-section .toggler-caret-target {
 		background: var(--moduleBg);
+		color: var(--moduleHColor) !important;
 	}
 	/* content */
 	body, footer.global-footer {
@@ -259,7 +260,7 @@
 	}
 	/* links */
 	a, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, ul.global-secondary-nav-links a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a {
-		color: var(--linkColor);
+		color: var(--linkColor) !important;
 	}
 	a:hover, .btn:hover {
 		color: var(--linkHover) !important;
