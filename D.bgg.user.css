@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.2
+@version        0.8.3
 @description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -391,7 +391,7 @@
 			background: var(--moduleBg);
 			border-bottom: var(--moduleBorder);
 		}
-		textarea, .infobox, .messagebox,, .geekpoll, .popupbox, .bluebox, .whitebox, button, input, optgroup, select {
+		textarea, .infobox, .messagebox,, .geekpoll, .popupbox, .bluebox, .whitebox, .profile_block, button, input, optgroup, select {
 			color: var(--textColor);
 		}
 		select {
