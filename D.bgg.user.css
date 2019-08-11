@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.4
+@version        0.8.5
 @description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -350,6 +350,11 @@
 		background: var(--quoteBg) !important;
 		border: var(--quoteBorder) !important;
 	}
+	/* expandable overlay fade */
+	.expandable div.expandable-envelope p.expandable-overlay {
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--moduleBg));
+	}
+		
 	
 	/* ==== LEGACY ==== */
 	.legacy {
