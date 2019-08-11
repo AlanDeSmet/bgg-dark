@@ -41,7 +41,7 @@
 @var	color		quoteTitleColor		'Quote title text '						#eee
 @var	color		quoteBorderColor	'Quote borders'							#555
 @var	color		quoteBg				'Quote body background'					#222
-@var	color		quoteColor			'Quote body text'						#bbb
+@var	color		quoteColor			'Quote body text'						#ccc
 
 == articles ==
 @var	color		articleSelected		'Border of selected article'			#aaf
