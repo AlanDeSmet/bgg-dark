@@ -1,31 +1,40 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
-@namespace      https://github.com/GrauGeist/bgg-dark/
+@namespace      github.com/openstyles/stylus
 @version        0.7.0
 @description    Dark Mode for BoardGameGeek.com, simplified from BGG UI Customizer 3.2.0
 @author         GrauGeist
+
 @preprocessor stylus
+
 == colors ==
 @var	color		mainBg				'Page Background'						#000
 @var	color		mainBg2				'Body Background'						#222
 @var	color		textColor			'Main text'								#eee
+
 @var 	color		headerBgGrad0		'Header background: gradient (top)'		#446
 @var	color		headerBgGrad1		' … gradient end (bottom)'				#446
 @var	color		headerColor			'Header text'							#ddd
+
 @var	color		moduleBg			'Background of modules, posts etc.'		#111
 @var	color		moduleHGrad0		'Module header bg: gradient (top)'		#446
 @var	color		moduleHGrad1		'… gradient end (bottom)'				#446
 @var	color		moduleHColor		'Module header text'					#ddd
 @var	color		moduleBorderColor	'Border of modules, posts etc.'			#777
+
 @var	color		fpColor2n			'Frontpage: bg of even rows'			#000
 @var	color		fpColor2n1			'… bg of odd rows'						#111
 @var	checkbox	fpRowBottomBorder	'Bottom border of rows in modules'		0
+
 @var	color		menuBg				'Background of menus, dropdowns etc.'	#333
 @var	color		menuBorderColor		'Border color of menus, dropdowns etc.'	#888
+
 @var	color		tableColor2n		'Tables: bg of even rows'				#000
 @var	color		tableColor2n1		'… bg of odd rows'						#111
+
 @var	color		buttonPrimaryBg		'Primary buttons background'			#05c
 @var	color		buttonPrimary		'primary buttons text'					#ff0
+
 == geeklists, forum ==
 @var	color		geeklistHeaderBg	'Background of geeklist headers'		#446
 @var	color		quoteTitleBg		'Quote title background'				#446
@@ -33,13 +42,16 @@
 @var	color		quoteBorderColor	'Quote borders'							#555
 @var	color		quoteBg				'Quote body background'					#222
 @var	color		quoteColor			'Quote body text'						#bbb
+
 == articles ==
 @var	color		articleSelected		'Border of selected article'			#aaf
 @var	color		articleNew			'Border of new article'					#f50
+
 == text colors ==
 @var	color		textPositive		'Text: positive values'					#4a4
 @var	color		textError			'Text: negative values, error messages'	#fd3
 @var	color		editHover			'Edit hover (games/collection view)'	#fdad2f
+
 == links ==
 @var	color		linkColor			'Links'									#55a
 @var	color		linkHover			'Link hover'							#f50
@@ -47,6 +59,7 @@
 @var	color		linkVisited			'Link visited'							#66c
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
+
 == fonts ==
 @var	select		fontXXL				"Font XXL (game titles)"			["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
 @var	range		fontSizeXXL			"Font size XXL"							[20,6,48,1,"px"]
@@ -58,6 +71,7 @@
 @var	range		fontSizeM			"Font size M"							[14,6,32,1,"px"]
 @var	select		fontS				"Font S (quickbar, hotness,  buttons …)"	["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
 @var	range		fontSizeS			"Font size S"							[13,6,24,1,"px"]
+
 == options ==
 @var	checkbox	ernie				'Ernie! (old cornerlogo)?'				0
 @var	checkbox	announcementHide	'Hide announcements?'					0
@@ -65,6 +79,7 @@
 @var	checkbox	geekpreviewHide		'Hide geekpreviews (GenCon, Essen)?'	0
 @var	checkbox	promotedVideoHide	'Hide promoted videos on game pages?'	0
 @var	checkbox	recommendationsHide	'Hide recommended "Fans Also Like"?'	0
+
 ==/UserStyle== */
 
 @-moz-document domain("boardgamegeek.com"), domain("bgg.cc"), domain("rpggeek.com"), domain("videogamegeek.com") {
@@ -310,10 +325,14 @@
 		border: var(--quoteBorder) !important;
 	}
 	
-	/* LEGACY */
+	/* ==== LEGACY ==== */
 	.legacy {
 		background: var(--mainBg2);
 		color: var(--textColor);
+		/* blogposts */
+		.blog_post {
+			background: var(--moduleBg) !important;
+		}		
 		/* modules */
 		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
 			background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));			
@@ -371,6 +390,13 @@
 			color: var(--quoteColor);
 			background: var(--quoteBg);
 			border: var(--quoteBorder);
+		}
+		/* polls!  */
+		.outerpoll {
+			background: var(--moduleBg);
+		}
+		.pollresults td.rowlabel, .pollresults td.uservote, .pollresults td.percent, .pollresults td.votes, .pollresults .answered  {
+			background: var(--menuBg);
 		}
 		/* links */
 		a, a:link, .nav > li > a, .comment_button, .geeksub_minorlink a:link {
