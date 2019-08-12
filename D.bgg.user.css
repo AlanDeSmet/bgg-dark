@@ -137,7 +137,6 @@
 		--textPositive: textPositive;
 	}
 
-	
 	/* max width? */
 	if maxWidth {
 		.container-fluid {
@@ -364,7 +363,7 @@
 	}
 		
 	
-	/* ==== LEGACY ==== */
+	/* ======== LEGACY ======== */
 	.legacy {
 		background: var(--mainBg2);
 		color: var(--textColor);
@@ -372,6 +371,7 @@
 		.blog_post {
 			background: var(--moduleBg) !important;
 		}		
+	
 		/* modules */
 		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
 			background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));			
@@ -413,12 +413,25 @@
 		.post_numcomments, .dull, .darkgray, div.header {
 			color: var(--textColor);
 		}
+		
+		/* article borders */
 		div.article.subbed {
 			border: var(--articleNew);
 		}
 		div.article.selected, div.article.subbed_selected {
 			border: var(--articleSelected);
 		}
+		div.article dl {
+			border-bottom: var(--menuBorder);
+		}
+		div.article dd.left {
+			border-right: var(--menuBorder);
+		}
+		div.article dd.right, div.article dd.commands {
+			border-left: var(--menuBorder);
+		}
+	
+		/* quotes */
 		.quotetitle {
 			color: var(--quoteTitleColor);
 			background: var(--quoteTitleBg);
@@ -430,6 +443,7 @@
 			background: var(--quoteBg);
 			border: var(--quoteBorder);
 		}
+
 		/* polls!  */
 		.outerpoll {
 			background: var(--moduleBg);
@@ -437,6 +451,7 @@
 		.pollresults td.rowlabel, .pollresults td.uservote, .pollresults td.percent, .pollresults td.votes, .pollresults .answered  {
 			background: var(--menuBg);
 		}
+		
 		/* links */
 		a, a:link, .nav > li > a, .comment_button, .geeksub_minorlink a:link {
 			color: var(--linkColor);
@@ -477,6 +492,7 @@
 			color: inherit;
 			background-color: var(--menuBg) !important;
 		}
+
 		/* fonts */
 		div.recommend_block dl.recommend *, .post_day {
 			font-family: var(--fontXXL) !important;
