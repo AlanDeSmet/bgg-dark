@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.7
+@version        0.8.8
 @description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -153,6 +153,13 @@
 		    top: 72px;
 			}
 	}
+	/* navigation bar borders */
+	.global-secondary-nav-section {
+		border: var(--moduleBorder);
+	}
+	 ul.global-secondary-nav-links > li, {
+		 border-bottom: var(--menuBorder);
+	 }
 	
 	/* header */
 	if ernie {
@@ -286,6 +293,7 @@
 	}
 	ul.global-secondary-nav-links a, .panel-title, .panel-body, .ng-binding  {
 		color: var(--textColor) !important;
+		
 	}
 	a:hover, .btn:hover {
 		color: var(--linkHover) !important;
