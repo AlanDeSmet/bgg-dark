@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.9
+@version        0.9.0
 @description    Dark Mode for BoardGameGeek.com;  initally based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -366,17 +366,35 @@
 	.expandable div.expandable-envelope p.expandable-overlay {
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--moduleBg));
 	}
-		
 	
 	/* ======== LEGACY ======== */
 	.legacy {
 		background: var(--mainBg2);
 		color: var(--textColor);
+		
 		/* blogposts */
 		.blog_post {
 			background: var(--moduleBg) !important;
 		}		
 	
+		/* editor, buttons & inputs */
+		table.forum_table tbody tr:nth-child(2) td {
+			background-color: var(--menuBg) !important;
+		}
+		a.editbutton {
+			border-top: 2px solid #ddd;
+ 			border-left: 2px solid #ddd;
+			border-right: 2px solid #999;
+			border-bottom: 2px solid #999;
+			background-color: var(--buttonPrimaryBg) !important;
+		}
+		button, .smallerfont[type="button"], input[type="reset"], input[type="submit"] {
+			background-color: var(--buttonPrimaryBg) !important;
+		}
+		input[style], textarea[style] {
+			width:100% !important;
+		}
+		
 		/* modules */
 		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
 			background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));			
