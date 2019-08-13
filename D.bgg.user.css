@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        0.8.8
-@description    Dark Mode for BoardGameGeek.com;  initial version based on yzemaze's BGG UI Customizer 3.2.0
+@version        0.8.9
+@description    Dark Mode for BoardGameGeek.com;  initally based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
 @preprocessor stylus
@@ -136,6 +136,11 @@
 		--textError: textError;
 		--textPositive: textPositive;
 	}
+	
+	/* vvvv  TESTING  vvvv */
+
+	
+	/* ^^^^  TESTING  ^^^^ */
 
 	/* max width? */
 	if maxWidth {
@@ -523,6 +528,12 @@
 		.menu_login, .menu_quickbar, .bluebox, div.header, div.recommend_block, div.article, div.comment_toolbar {
 			border: var(--menuBorder);
 		}
+		
+		/* ratings */
+		.rating[style*="background:white"] {
+			background: var(--buttonPrimaryBg) !important;
+		} 
+		
 		/* geeklists */
 		.geeklist_title, .geeklist_item_title, .comment_toolbar {
 			background: var(--geeklistHeaderBg);
@@ -534,6 +545,7 @@
 			background: var(--menuBg);
 			border: var(--moduleBorder);
 		}
+
 		/* collection */
 		.editfield:hover {
 			background: var(--editHover);
@@ -543,10 +555,10 @@
 			background: var(--moduleBg) !important;
 			border: var(--moduleBorder) !important;
 		}
-		table.gm_messages:nth-child(2n) tr[style="background:#F7F7F8"] {
+		table.gm_messages:nth-child(2n) tr[style*="background:#F7F7F8"] {
 			background: var(--tableColor2n1) !important;
 		}
-		table.gm_messages:nth-child(2n+1) tr[style="background:#F7F7F8"] {
+		table.gm_messages:nth-child(2n+1) tr[style*="background:#F7F7F8"] {
 			background: var(--tableColor2n) !important;
 		}
 	}
