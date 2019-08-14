@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        0.9.3
+@version        0.9.4
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -139,32 +139,18 @@
 		--textPositive: textPositive;
 	}
 	
-	/* max width? */
-	if maxWidth {
-		.container-fluid {
-	    	max-width: none;
-		}
+	
+	/* ========----  ENTIRE BODY  ----======== */
+	body, footer.global-footer {
+		color: var(--textColor);
+		background: var(--mainBg);
 	}
 	
-	/* floating navigation? */
-	if floatLeftNav {
-		.global-body-content-container .global-secondary-nav, .sidebar-type-embedded {
-    		width: 200px !important;
-		    position: sticky;
-		    top: 72px;
-			}
-	}
-	/* navigation bar borders */
-	.global-secondary-nav-section {
-		border: var(--moduleBorder);
-	}
-	 ul.global-secondary-nav-links > li {
-		 border-bottom: var(--menuBorder);
-	 }
 	
-	/* header */
+	/* ====--------  TOP header  --------==== */
 	.global-header {
 		background: linear-gradient(var(--headerBgGrad0), var(--headerBgGrad1));
+		border-bottom: 1px solid var(--textColor);
 	}
 	.global-header-nav-primary {
 		.dropdown-toggle, button.btn, a.btn, .global-header-site-selector, > button.btn, a.global-header-icon, a.global-header-icon.is-active i, button.btn.global-header-icon.is-active i {
@@ -208,11 +194,38 @@
 	.global-header-nav-search-advanced a:hover {
 		background: var(--moduleBg);
 	}
-	/* sidebar */
+
+	
+	/* ====--------  FULL global body  --------==== */
+	/* max width? */
+	if maxWidth {
+		.container-fluid {
+	    	max-width: none;
+		}
+	}
+	
+	
+	/* ==--  LEFT nav - Quickbar, Recent, Hotness  --== */
+	/* floating navigation? */
+	if floatLeftNav {
+		.global-body-content-container .global-secondary-nav, .sidebar-type-embedded {
+    		width: 200px !important;
+		    position: sticky;
+		    top: 72px;
+			}
+	}
+	
+	/* navigation bar borders */
+	.global-secondary-nav-section {
+		border: var(--moduleBorder);
+	}
+	
+	/* headers */
 	.global-secondary-nav-section-header {
 		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
 		color: var(--moduleHColor);
 	}
+	/* link background & color overrides */
 	a.toggler-caret, a.global-secondary-nav-section-header {
 		color: var(--moduleHColor) !important;
 	}
@@ -220,14 +233,17 @@
 		background: var(--moduleBg);
 		color: var(--moduleHColor) !important;
 	}
-	/* content */
-	body, footer.global-footer {
-		color: var(--textColor);
-		background: var(--mainBg);
+	/* list item separators */
+	ul.global-secondary-nav-links > li {
+		 border-bottom: var(--menuBorder);
 	}
+	
+	
+	/* ====--------  CENTER content  --------==== */
 	.global-body-content {
 		background: var(--mainBg2);
 	}
+
 	/* hide specific modules if set */
 	if announcementHide {
 		.spotlight_red {
@@ -244,12 +260,14 @@
 		    display: none;
 		}
 	}
+
 	/* panels */
 	.panel-default > .panel-heading, .panel-primary > .panel-heading {
 		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
 		border: var(--moduleBorder);
 		color: var(--moduleHColor);
 	}
+
 	/* fonts */
 	.game-header-title-info h1 {
 		font-family: var(--fontXXL) !important;		
@@ -278,6 +296,7 @@
 	.text-muted {
 		filter: opacity(60%);
 	}
+	
 	/* links */
 	a, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a {
 		color: var(--linkColor) 
@@ -292,6 +311,7 @@
 	a.selected {
 		color: var(--linkSelected) !important;
 	}
+	
 	/* frontpage: zebra striped modules */
 	.geekcentral {
 		tr.moduleRow {
@@ -311,6 +331,7 @@
 	table.salesreport tr.even, .table-striped tr:nth-child(2n+1), .table-striped > tbody > tr:nth-child(2n+1) > th, .table-striped > tbody > tr:nth-child(2n+1) > td , .table-condensed tr:nth-child(2n+1), div.wrapper tr:nth-child(2n+1), .collection_table > tbody > tr:nth-child(2n+1), tr[bgcolor="#ECEDEE"] {
 		background: var(--tableColor2n1);
 	}
+	
 	/* geekmarket */
 	.white-bg, .nav > li.active {
 		background: var(--menuBg);
@@ -321,6 +342,7 @@
 	.table-bordered tbody tr td, .table-bordered tbody tr th {
 		border: var(--menuBorder);
 	}
+
 	/* game pages */
 	if promotedVideoHide {
 		promotedvideos-module {
@@ -344,6 +366,7 @@
 	.summary-border .summary-item {
 		border-bottom: var(--menuBorder);
 	}
+
 	/* image gallery */
 	gg-markup-quote {
 		background: var(--quoteBg) !important;
@@ -398,6 +421,7 @@
 		.module_title, td.module_title + td > div a, td.modulecommands + td > div, td.modulecommands + td > div > a, .moduletable th a, .moduletable > tbody > tr:first-child, .moduletable .modulecommands, .modulecommands select, .modulecommands option {
 			color: var(--moduleHColor);
 		}
+
 		/* marketplace + images *rolleyes* */
 		table.moduletable > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
 			color: var(--moduleHColor);
@@ -410,6 +434,7 @@
 			background: var(--menuBg);
 			border: var(--menuBorder);
 		}
+
 		/* forum */
 		.forum_table th, .forum_index_table th {
 			color: var(--moduleHColor);
