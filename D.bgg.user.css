@@ -1,7 +1,9 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
-@namespace      github.com/openstyles/stylus
+@namespace      GrauGeist
 @version        0.9.2
+@homepageURL	https://github.com/GrauGeist/bgg-dark
+@updateURL	https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @description    Dark Mode for BoardGameGeek.com;  initally based on yzemaze's BGG UI Customizer 3.2.0
 @author         GrauGeist
 
@@ -74,7 +76,6 @@
 
 == options ==
 @var	checkbox	maxWidth			'Use full screen width?'				1
-@var	checkbox	ernie				'Ernie! (old cornerlogo)?'				0
 @var	checkbox	announcementHide	'Hide announcements?'					0
 @var	checkbox	contestHide			'Hide contests and results?'			0
 @var	checkbox	geekpreviewHide		'Hide geekpreviews (GenCon, Essen)?'	0
@@ -161,16 +162,6 @@
 	 }
 	
 	/* header */
-	if ernie {
-		div.global-header-logo > a > img {
-			width: 60px;
-			height: 45px;
-			box-sizing: border-box;
-			padding-left: 60px;
-			background: url("https://cf.geekdo-static.com/images/geekdo/bgg_cornerlogo.png");
-			background-size: contain;
-		}		
-	}
 	.global-header {
 		background: linear-gradient(var(--headerBgGrad0), var(--headerBgGrad1));
 	}
