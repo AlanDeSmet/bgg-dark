@@ -157,7 +157,7 @@
 	.global-secondary-nav-section {
 		border: var(--moduleBorder);
 	}
-	 ul.global-secondary-nav-links > li, {
+	 ul.global-secondary-nav-links > li {
 		 border-bottom: var(--menuBorder);
 	 }
 	
