@@ -593,10 +593,10 @@
 			background: var(--moduleBg) !important;
 			border: var(--moduleBorder) !important;
 		}
-		table.gm_messages:nth-child(2n) tr[style*="background:#F7F7F8"] {
+		table.gm_messages:nth-child(2n) tr[style] {
 			background: var(--tableColor2n1) !important;
 		}
-		table.gm_messages:nth-child(2n+1) tr[style*="background:#F7F7F8"] {
+		table.gm_messages:nth-child(2n+1) tr[style] {
 			background: var(--tableColor2n) !important;
 		}
 		
