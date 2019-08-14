@@ -540,16 +540,18 @@
 		.mainmenutabs, .menu_login, .menu_quickbar, .profile_block, table#collectionitems, div.global-body-content > div, div.header , div.article {
 			background: var(--moduleBg);
 		}
-		.messagebox, .popupbox, div.recommend_block, .bluebox, div.wikitoc, input, textarea, .profile_title, .img-thumbnail, .menutab-open, .mainmenutabs li a.open, .submenutabs li a.open, a.comment_button, .innermoduletable th, .geekpoll {
+		.messagebox, .popupbox, div.recommend_block, .bluebox, div.wikitoc, input, textarea, .profile_title, .img-thumbnail, .menutab-open, .mainmenutabs li a.open, .submenutabs li a.open,.innermoduletable th, .geekpoll {
 			background: var(--menuBg);
 		}
+				
 		.menu_login, .menu_quickbar, .bluebox, div.header, div.recommend_block, div.article, div.comment_toolbar {
 			border: var(--menuBorder);
 		}
 		
-		/* ratings */
-		.rating[style*="background:white"] {
+		/* ratings & buttons */
+		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
 			background: var(--buttonPrimaryBg) !important;
+			color: var(--buttonColor);
 		} 
 		
 		/* geeklists */
