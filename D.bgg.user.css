@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        0.9.6
+@version        0.9.7
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -96,7 +96,6 @@
 		--buttonPrimaryBg: buttonPrimaryBg;
 		--buttonPrimary: buttonPrimary;
 		--editHover: editHover;
-		--ernie: ernie;
 		--fontXXL: fontXXL;
 		--fontXL: fontXL;
 		--fontL: fontL;
@@ -320,8 +319,12 @@
 	/* frontpage: zebra striped modules */
 	.geekcentral {
 		tr.moduleRow {
-			&:nth-child(2n) {background: var(--fpColor2n);}
-			&:nth-child(2n+1) {background: var(--fpColor2n1);}
+			&:nth-child(2n) {
+				background: var(--fpColor2n);
+			}
+			&:nth-child(2n+1) {
+				background: var(--fpColor2n1);
+			}
 		}
 	}
 	if fpRowBottomBorder {
@@ -415,23 +418,27 @@
 			color: var(--moduleHColor);
 			font-size: var(--fontSizeXL);
 		}
-		.moduletable th {
-			color: var(--textColor);
-		}
 		.modulecommands option {
 			background: var(--menuBg);
 			border: var(--menuBorder);
 		}
 
-		/* forum */
-		.forum_table th, .forum_index_table th {
+		/* tables */
+		.collection_table th, .forum_table th, .forum_index_table th, moduletable th {
 			color: var(--moduleHColor);
+			outline: var(--menuBorder);
 		}
-		.forum_table td, .forum_index_table td {
+		.collection_table td, .forum_table td, .forum_index_table td, .moduletable td {
 			color: var(--textColor);
 			background: var(--moduleBg);
+			outline: var(--moduleBorder);
 			border-bottom: var(--moduleBorder);
 		}
+		.moduletable th {
+			color: var(--textColor);
+		}
+		
+		
 		textarea, .infobox, .messagebox,, .geekpoll, .popupbox, .bluebox, .whitebox, .profile_block, button, input, optgroup, select {
 			color: var(--textColor);
 		}
@@ -553,13 +560,16 @@
 			font-family: var(--fontS) !important;
 			font-size: var(--fontSizeS) !important;
 		}
+		
+		/* backgrounds */
 		.mainmenutabs, .menu_login, .menu_quickbar, .profile_block, table#collectionitems, div.global-body-content > div, div.header , div.article {
 			background: var(--moduleBg);
 		}
 		.messagebox, .popupbox, div.recommend_block, .bluebox, div.wikitoc, input, textarea, .profile_title, .img-thumbnail, .menutab-open, .mainmenutabs li a.open, .submenutabs li a.open,.innermoduletable th, .geekpoll {
 			background: var(--menuBg);
 		}
-				
+		
+		/* borders & outlines */
 		.menu_login, .menu_quickbar, .bluebox, div.header, div.recommend_block, div.article, div.comment_toolbar {
 			border: var(--menuBorder);
 		}
