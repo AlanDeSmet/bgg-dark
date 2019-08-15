@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        0.9.7
+@version        0.9.8
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -66,16 +66,12 @@
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
 == fonts ==
-@var	select		fontXXL				"Font XXL (game titles)"			["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
-@var	range		fontSizeXXL			"Font size XXL"							[20,6,48,1,"px"]
-@var	select		fontXL				"Font XL (module headings)"			["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
-@var	range		fontSizeXL			"Font size XL"							[18,6,40,1,"px"]
-@var	select		fontL				"Font L (main text)"				["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
-@var	range		fontSizeL			"Font size L"							[16,6,36,1,"px"]
-@var	select		fontM				"Font  M (author, pagination …)"	["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
-@var	range		fontSizeM			"Font size M"							[14,6,32,1,"px"]
-@var	select		fontS				"Font S (quickbar, hotness,  buttons …)"	["default","proxima-nova*","monospace","proportional","sans-serif","serif"]
-@var	range		fontSizeS			"Font size S"							[13,6,24,1,"px"]
+@var	range		fontSizeXXL			"Font XXL (game titles)"				[20,6,48,1,"px"]
+@var	range		fontSizeXL			"Font XL (module headings)"				[18,6,40,1,"px"]
+@var	range		fontSizeL			"Font L (main text)"					[16,6,36,1,"px"]
+@var	range		fontSizeM			"Font M (author, pagination …)"			[14,6,32,1,"px"]
+@var	range		fontSizeS			"Font S (quickbar, hotness, buttons …)"	[13,6,24,1,"px"]
+@var	select		fontFamily			"Font Family"							["verdana*", "sans-serif", "proportional", "default"]
 
 == options ==
 @var	checkbox	maxWidth			'Use full screen width?'				1
@@ -96,11 +92,7 @@
 		--buttonPrimaryBg: buttonPrimaryBg;
 		--buttonPrimary: buttonPrimary;
 		--editHover: editHover;
-		--fontXXL: fontXXL;
-		--fontXL: fontXL;
-		--fontL: fontL;
-		--fontM: fontM;
-		--fontS: fontS;
+		--fontFamily: fontFamily;
 		--fontSizeXXL: fontSizeXXL;
 		--fontSizeXL: fontSizeXL;
 		--fontSizeL: fontSizeL;
@@ -184,8 +176,8 @@
 		color: var(--textColor) !important;
 	}
 	.btn-subtle {
-		background: var(--menuBg);
-		filter: opacity(70%);
+		background: var(--buttonPrimaryBg);
+		filter: opacity(80%);
 	}
 	.btn-default:not(.active):not(:disabled):hover {
 		color: var(--linkHover);
@@ -274,38 +266,38 @@
 
 	/* fonts */
 	.game-header-title-info h1 {
-		font-family: var(--fontXXL) !important;		
+		font-family: var(--fontFamily) !important;		
 		font-size: var(--fontSizeXXL) !important;		
 	}
 	h2, .panel-header-lg .panel-title, .navbar-brand {
-		font-family: var(--fontXL) !important;		
+		font-family: var(--fontFamily) !important;		
 		font-size: var(--fontSizeXL) !important;		
 	}
 	.btn, body, h3, h5, .h5, .global-header-nav-primary .dropdown-toggle, .global-header-nav-primary button.btn, .global-header-nav-primary a.btn, .global-header-site-selector, .global-header-nav-primary .dropdown-menu li a, .form-control, .game-year, .gameplay-item-primary, .quotetitle, .quote {
-		font-family: var(--fontL) !important;
+		font-family: var(--fontFamily) !important;
 		font-size: var(--fontSizeL) !important;
 	}
 	.btn.btn-sm, .btn-group-sm > .btn, h4, .game-header-title-summary, .nav.nav-tabs > li > a, .credits, .credits > * > *, .credits-cta, .rating-stars-title, .panel-header-sm .panel-title, .fs-responsive-sm, .game-classification, .game-marketplace, .summary-video-item > div, .summary-item-description > *, .summary-item-counts > *, .summary-item-meta, .summary-item-meta > *, .summary-item-actions > *, .summary-item-actions-below > *, ul.list-block-border > li > a, .global-footer p, .condition-label, .pagination-sm > li > a, .pagination-sm > li > span, .badge, a.tag, .avatarblock {
-		font-family: var(--fontM) !important;
+		font-family: var(--fontFamily) !important;
 		font-size: var(--fontSizeM) !important;
 	}
 	.btn-xs, .btn-group-xs > .btn, .fs-xs, a.global-header-user-notification-action, button.global-header-user-notification-action, .global-secondary-nav-section-header, .global-secondary-nav-section-header.toggler-caret, .quickbar-header button.btn,, ul.global-secondary-nav-links > li, .hotness-item-title, .game-header-flags, .gameplay-item-secondary, .game-itemid, .text-domain, .summary-item-tag a, .summary-media-grid-count, .summary-item-pagination.pagination > li > a, .summary-item-pagination.pagination > li > span, .summary-file .summary-file-type a {
-		font-family: var(--fontS) !important;
+		font-family: var(--fontFamily) !important;
 		font-size: var(--fontSizeS) !important;
 	}
 	/* text-colors */
 	h1, h2, h3, h4, h5, h6, p, .dropdown-header, .panel-heading, .text-muted, .summary-sale-item-price {
 		color: var(--textColor) !important;
 	}
-	.text-muted {
-		filter: opacity(60%);
+	.text-muted,.link-muted-border-muted {
+		filter: opacity(80%);
 	}
 	
 	/* links */
 	a, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a {
 		color: var(--linkColor) 
 	}
-	ul.global-secondary-nav-links a, .panel-title, .panel-body, .ng-binding, .question  {
+	ul.global-secondary-nav-links a, .panel-title, .panel-body, .ng-binding, .link-muted-border-muted, .question  {
 		color: var(--textColor) !important;
 		
 	}
@@ -368,7 +360,7 @@
 	.game-nav-tabs, .global-body-content-primary {
 		background: var(--moduleBg);
 	}
-	.well {
+	.well, .comment-header {
 		background: var(--menuBg) !important;
 	}
 	.summary-border .summary-item {
@@ -380,6 +372,15 @@
 		background: var(--quoteBg) !important;
 		border: var(--quoteBorder) !important;
 	}
+	
+	/* expansions */
+	.outline-item-title {
+		color: var(--textColor);
+	}
+	.outline-item-description {
+		color: var(--textColor);
+	}
+
 	/* expandable overlay fade */
 	.expandable div.expandable-envelope p.expandable-overlay {
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--moduleBg));
@@ -538,7 +539,7 @@
 			color: inherit;
 			background-color: var(--menuBg) !important;
 		}
-
+	
 		/* fonts */
 		div.recommend_block dl.recommend *, .post_day {
 			font-family: var(--fontXXL) !important;
