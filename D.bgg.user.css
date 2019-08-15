@@ -71,7 +71,7 @@
 @var	range		fontSizeL			"Font L (main text)"					[16,6,36,1,"px"]
 @var	range		fontSizeM			"Font M (author, pagination …)"			[14,6,32,1,"px"]
 @var	range		fontSizeS			"Font S (quickbar, hotness, buttons …)"	[13,6,24,1,"px"]
-@var	select		fontFamily			"Font Family"							["verdana*", "sans-serif", "proportional", "default"]
+@var	select		fontFamily			"Font Family"							["verdana*", "arial", "sans-serif", "proportional", "default"]
 
 == options ==
 @var	checkbox	maxWidth			'Use full screen width?'				1
