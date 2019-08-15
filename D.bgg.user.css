@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        0.9.5
+@version        0.9.6
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -31,6 +31,8 @@
 
 @var	color		menuBg				'Background of menus, dropdowns etc.'	#222
 @var	color		menuBorderColor		'Border color of menus, dropdowns etc.'	#666
+
+@var	color		popupBg				'Background of pop-ups'					#333
 
 @var	color		tableColor2n		'Tables: bg of even rows'				#000
 @var	color		tableColor2n1		'… bg of odd rows'						#111
@@ -126,6 +128,7 @@
 		--moduleHGrad0: moduleHGrad0;
 		--moduleHGrad1: moduleHGrad1;
 		--moduleHColor: moduleHColor;
+		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
 		--quoteTitleColor: quoteTitleColor;
 		--quoteBg: quoteBg;
@@ -244,6 +247,8 @@
 		background: var(--mainBg2);
 	}
 
+	
+	/* ====--------  BGG Front page  --------==== */
 	/* hide specific modules if set */
 	if announcementHide {
 		.spotlight_red {
@@ -379,7 +384,7 @@
 	
 	/* collection pop-ups! */
 	div[style*="margin:1em"], div.select-free, div.quickplay_create[style*="background:#fff"] {
-			background: var(--menuBg) !important;
+			background: var(--popupBg) !important;
 			}
 	
 	/* ====--------   LEGACY   -------==== */
@@ -392,23 +397,6 @@
 			background: var(--moduleBg) !important;
 		}
 	
-		/* editor, buttons & inputs */
-		table.forum_table tbody tr:nth-child(2) td {
-			background-color: var(--menuBg) !important;
-		}
-		a.editbutton {
-			border-top: 2px solid #ddd;
- 			border-left: 2px solid #ddd;
-			border-right: 2px solid #999;
-			border-bottom: 2px solid #999;
-			background-color: var(--buttonPrimaryBg) !important;
-		}
-		button, .smallerfont[type="button"], input[type="reset"], input[type="submit"], input[type="button"] {
-			background-color: var(--buttonPrimaryBg) !important;
-		}
-		textarea[style] {
-			width:100% !important;
-		}
 		
 		/* modules */
 		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
@@ -484,6 +472,14 @@
 			border: var(--quoteBorder);
 		}
 
+		/* recommend pop-up */
+		.recspy_header {
+			background: var(--quoteTitleBg);
+		}
+		.recspy_box {
+			background: var(--popupBg);
+		}
+		
 		/* polls!  */
 		.outerpoll {
 			background: var(--moduleBg);	
@@ -523,6 +519,7 @@
 				color: var(--textColor);
 			}
 		}
+
 		/* text colors */
 		.error, text-danger {
 			color: var(--textError);
@@ -567,12 +564,6 @@
 			border: var(--menuBorder);
 		}
 		
-		/* ratings & buttons */
-		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
-			background: var(--buttonPrimaryBg) !important;
-			color: var(--buttonColor);
-		} 
-		
 		/* geeklists */
 		.geeklist_title, .geeklist_item_title, .comment_toolbar {
 			background: var(--geeklistHeaderBg);
@@ -584,11 +575,6 @@
 			background: var(--menuBg);
 			border: var(--moduleBorder);
 		}
-
-		/* collection */
-		.editfield:hover {
-			background: var(--editHover);
-		}		
 		
 		/* geekmail */
 		tr:first-child > td.sf > div.sf, .gm_controlbar, div.geekpages:nth-child(2) {
@@ -601,18 +587,53 @@
 		table.gm_messages:nth-child(2n+1) tr[style] {
 			background: var(--tableColor2n) !important;
 		}
+
+		/* collection */
+		.editfield:hover {
+			background: var(--editHover);
+		}		
+		.editfield_active {
+			background: var(--menuBg);
+		}		
 		
-		
+		/* ratings & buttons */
+		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
+			background: var(--buttonPrimaryBg) !important;
+			color: var(--buttonColor);
+		} 	
 		/* Flag thread */
 		div[style*="background:lightsteelblue"] {
 			background-color: var(--moduleBg) !important;
-			color: var(--textError);
+			color: var(--textColor);
 		}
 		div[style*="background:white"] {
 			background-color: var(--quoteBg) !important;
 			color: var(--quoteColor);
+			a {
+				color: var(--textError);
+			}
+			a[target] {
+				color: var(--textColor);
+			}
 		}
-		
-		
+				
+		/* editor, buttons & inputs */
+		table.forum_table tbody tr:nth-child(2) td {
+			background-color: var(--menuBg) !important;
+		}
+		a.editbutton {
+			/* match colors */
+			border-top: 2px solid #ddd;
+ 			border-left: 2px solid #ddd;
+			border-right: 2px solid #999;
+			border-bottom: 2px solid #999;
+			background-color: var(--buttonPrimaryBg) !important;
+		}
+		button, .smallerfont[type="button"], input[type="reset"], input[type="submit"], input[type="button"] {
+			background-color: var(--buttonPrimaryBg) !important;
+		}
+		textarea[style] {
+			width:100% !important;
+		}
 	}
 }	
