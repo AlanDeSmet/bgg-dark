@@ -210,20 +210,23 @@
 	}
 	
 	/* navigation bar borders */
-	.global-secondary-nav-section {
+	.global-secondary-nav-section, .geeksidebar-section {
 		border: var(--moduleBorder);
 	}
 	
 	/* headers */
-	.global-secondary-nav-section-header {
+	.global-secondary-nav-section-header, .geeksidebar-section-header {
 		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
 		color: var(--moduleHColor);
+	}
+	.quickbar-header {
+		background-color: var(--menuBg);
 	}
 	/* link background & color overrides */
 	a.toggler-caret, a.global-secondary-nav-section-header {
 		color: var(--moduleHColor) !important;
 	}
-	.global-secondary-nav-section .toggler-caret-target {
+	.global-secondary-nav-section .toggler-caret-target,  {
 		background: var(--moduleBg);
 		color: var(--moduleHColor) !important;
 	}
@@ -267,8 +270,6 @@
 			}
 		}
 	}
-	
-	
 	.panel-default > .panel-heading, .panel-primary > .panel-heading {
 		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
 		border: var(--moduleBorder);
@@ -300,7 +301,7 @@
 	h1, h2, h3, h4, h5, h6, p, .dropdown-header, .panel-heading, .text-muted, .summary-sale-item-price {
 		color: var(--textColor) !important;
 	}
-	.text-muted,.link-muted-border-muted {
+	.text-muted, .link-muted-color, .link-muted-border-muted {
 		filter: opacity(80%);
 	}
 	
@@ -371,7 +372,7 @@
 	.game-nav-tabs, .global-body-content-primary {
 		background: var(--moduleBg);
 	}
-	.well, .comment-header {
+	.well {
 		background: var(--menuBg) !important;
 	}
 	
@@ -385,10 +386,11 @@
 		background-color: var(--tableColor2n1);
 	}
 
-	/* image gallery */
+	/* image gallery & file comment quotes */
 	gg-markup-quote {
 		background: var(--quoteBg) !important;
 		border: var(--quoteBorder) !important;
+		color: var(--quoteColor) !important;
 	}
 	
 	/* expansions */
@@ -409,6 +411,46 @@
 			background: var(--popupBg) !important;
 			}
 	
+	/* file comments -- exception! */
+	.time, .timeline-body {
+		color: var(--textColor) !important;
+	}
+	.c-container {
+		background: var(--moduleBg) !important;
+		border: var(--moduleBorder) !important;
+		color: var(--textColor);
+	
+		.form-control {
+			background: var(--menuBg) !important;
+			border: var(--menuBorder) !important;
+			color: var(--textColor);
+		}
+		label {
+			color: var(--textColor);
+		}
+		button, .btn {
+			border-top: 2px solid #ddd;
+ 			border-left: 2px solid #ddd;
+			border-right: 2px solid #999;
+			border-bottom: 2px solid #999;
+			background-color: var(--buttonPrimaryBg) !important;
+			color: var(--textColor);
+		}
+	}
+	gg-comment {
+		border: var(--moduleBorder) !important;
+	}
+	.comment-header {
+		.user-info {
+			color: var(--headerColor) !important;
+		}
+	}
+	.comment-body, .comment-footer, .comment-footer > a {
+		color: var(--textColor) !important;
+		
+	}
+			
+			
 	/* ====--------   LEGACY   -------==== */
 	.legacy {
 		background: var(--mainBg2);
@@ -686,7 +728,7 @@
 			border-bottom: 2px solid #999;
 			background-color: var(--buttonPrimaryBg) !important;
 		}
-		button, .smallerfont[type="button"], input[type="reset"], input[type="submit"], input[type="button"] {
+		button, .btn, .smallerfont[type="button"], input[type="reset"], input[type="submit"], input[type="button"] {
 			background-color: var(--buttonPrimaryBg) !important;
 		}
 		textarea[style] {
