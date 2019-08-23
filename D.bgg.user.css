@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        0.9.8
+@version        0.9.9
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -492,10 +492,34 @@
 		.outerpoll {
 			background: var(--moduleBg);	
 			}
+		.geekpoll {
+			background-color: var(--menuBg);
+			tr:nth-child(2n)  {
+				background: var(--tableColor2n);
+			}
+			tr:nth-child(2n+1)  {
+				background: var(--tableColor2n1);
+			}
+			tr.columnlabel {
+				background-color: var(--menuBG);
+			}
+		}	
 		.pollresults {
 			th, td, .answered {
+				background: transparent !important;
+			}
+			th.header {
+				background: var(--geeklistHeaderBg) !important;
+			}
+			tr:nth-child(2n)  {
+				background: var(--tableColor2n1) !important;
+			}
+			tr:nth-child(2n+1)  {
+				background: var(--tableColor2n) !important;
+			}
+			thead tr:nth-child(2)  {
 				background: var(--menuBg) !important;
-			}	
+			}
 		}
 		
 		/* links */
