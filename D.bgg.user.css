@@ -23,7 +23,7 @@
 @var	color		moduleHGrad0		'Module header bg: gradient (top)'		#446
 @var	color		moduleHGrad1		'… gradient end (bottom)'				#446
 @var	color		moduleHColor		'Module header text'					#eee
-@var	color		moduleBorderColor	'Border of modules, posts etc.'			#555
+@var	color		moduleBorderColor	'Border of modules, posts etc.'			#444
 
 @var	color		fpColor2n			'Frontpage: bg of even rows'			#000
 @var	color		fpColor2n1			'… bg of odd rows'						#111
@@ -258,6 +258,17 @@
 	}
 
 	/* panels */
+	.panel {
+		.panel-header, panel-header-lg {
+			background-color: var(--moduleHGrad0);
+			color: var(--moduleHColor);
+			.panel-title > a:link {
+				color: var(--moduleHColor) !important;
+			}
+		}
+	}
+	
+	
 	.panel-default > .panel-heading, .panel-primary > .panel-heading {
 		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
 		border: var(--moduleBorder);
@@ -363,8 +374,15 @@
 	.well, .comment-header {
 		background: var(--menuBg) !important;
 	}
-	.summary-border .summary-item {
-		border-bottom: var(--menuBorder);
+	
+	/* game forum table */
+	.summary-border .summary-item:nth-child(2n) {
+		border-bottom: var(--moduleBorder);
+		background-color: var(--tableColor2n);
+	}
+	.summary-border .summary-item:nth-child(2n+1) {
+		border-bottom: var(--moduleBorder);
+		background-color: var(--tableColor2n1);
 	}
 
 	/* image gallery */
@@ -425,11 +443,11 @@
 		}
 
 		/* tables */
-		.collection_table th, .forum_table th, .forum_index_table th, moduletable th {
+		.collection_table th, .forum_table th, .forum_index_table th {
 			color: var(--moduleHColor);
 			outline: var(--menuBorder);
 		}
-		.collection_table td, .forum_table td, .forum_index_table td, .moduletable td {
+		.forum_table td, .forum_index_table td {
 			color: var(--textColor);
 			background: var(--moduleBg);
 			outline: var(--moduleBorder);
@@ -566,23 +584,23 @@
 	
 		/* fonts */
 		div.recommend_block dl.recommend *, .post_day {
-			font-family: var(--fontXXL) !important;
+			font-family: var(--fontFamily) !important;
 			font-size: var(--fontSizeXXL) !important;
 		}
 		h1, .module_title, .profile_title, .gallery_title, span[style*="20px"], .geeklist_item_title, .post_month, dt.tippersbig a, .forum_path, .lf, table.lf td {
-			font-family: var(--fontXL) !important;
+			font-family: var(--fontFamily) !important;
 			font-size: var(--fontSizeXL) !important;
 		}
 		.moduletable th, .innermoduletable th, .itemmoduletable th, .innermoduletable td, #container, textarea, table, .post_year, .mf, table.mf td, .quotetitle, .quote {
-			font-family: var(--fontL) !important;
+			font-family: var(--fontFamily) !important;
 			font-size: var(--fontSizeL) !important;
 		}
 		.objectlink > a, .forumlink > a, .modulecommands, .pager, .sf, table.sf td, .post_numcomments, .smallerfont, .tabOn, .tabOff, .geekmail_header, .gm_date, .collection_table td, .owned, .wanted, .fortrade, .wishlist, .prevowned, .wanttoplay, .rating span, .ratingtext, #blog_description, .post_categories ul li, .post_nlinks ul li, .dropdown-header, .geekinput_medium, div.wikitoc, a.tag, .avatarblock {
-			font-family: var(--fontM) !important;
+			font-family: var(--fontFamily) !important;
 			font-size: var(--fontSizeM) !important;
 		}
 		.geekpages, .pages, .comment_button, .comment_button_disabled, .gallery_caption, .tagbar-inner, .post_author, .post_controls, .post_tstamp, div[style*="9pt"], div.recommendbox_str {
-			font-family: var(--fontS) !important;
+			font-family: var(--fontFamily) !important;
 			font-size: var(--fontSizeS) !important;
 		}
 		
@@ -624,12 +642,16 @@
 		}
 
 		/* collection */
+		.collection_table td {
+			border-left: var(--moduleBorder);
+			border-top: var(--menuBorder);
+		}
 		.editfield:hover {
 			background: var(--editHover);
 		}		
 		.editfield_active {
 			background: var(--menuBg);
-		}		
+		} 
 		
 		/* ratings & buttons */
 		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
