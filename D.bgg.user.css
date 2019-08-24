@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.0.0
+@version        1.0.1
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -15,13 +15,11 @@
 @var	color		mainBg2				'Body Background'						#222
 @var	color		textColor			'Main text'								#fff
 
-@var 	color		headerBgGrad0		'Header background: gradient (top)'		#446
-@var	color		headerBgGrad1		' … gradient end (bottom)'				#446
+@var 	color		headerBg			'Header background'						#446
 @var	color		headerColor			'Header text'							#eee
 
 @var	color		moduleBg			'Background of modules, posts etc.'		#000
-@var	color		moduleHGrad0		'Module header bg: gradient (top)'		#446
-@var	color		moduleHGrad1		'… gradient end (bottom)'				#446
+@var	color		moduleHBg			'Module header bg'						#446
 @var	color		moduleHColor		'Module header text'					#eee
 @var	color		moduleBorderColor	'Border of modules, posts etc.'			#444
 
@@ -101,8 +99,7 @@
 		--fpColor2n: fpColor2n;
 		--fpColor2n1: fpColor2n1;
 		--geeklistHeaderBg: geeklistHeaderBg;
-		--headerBgGrad0: headerBgGrad0;
-		--headerBgGrad1: headerBgGrad1;
+		--headerBg: headerBg;
 		--headerColor: headerColor;
 		--linkColor: linkColor;
 		--linkHover: linkHover;
@@ -116,8 +113,7 @@
 		--menuBorder: 1px solid menuBorderColor;
 		--moduleBg: moduleBg;
 		--moduleBorder: 1px solid moduleBorderColor;
-		--moduleHGrad0: moduleHGrad0;
-		--moduleHGrad1: moduleHGrad1;
+		--moduleHBg: moduleHBg;
 		--moduleHColor: moduleHColor;
 		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
@@ -143,7 +139,7 @@
 	
 	/* ====--------  TOP header  --------==== */
 	.global-header {
-		background: linear-gradient(var(--headerBgGrad0), var(--headerBgGrad1));
+		background: var(--headerBg);
 		border-bottom: 1px solid var(--textColor);
 	}
 	.global-header-nav-primary {
@@ -155,7 +151,7 @@
 		color: var(--textColor);
 	}
 	.ui-select-bootstrap .ui-select-choices-row.active > a {
-		background: var(--headerBgGrad0);
+		background: var(--headerBg);
 		color: var(--headerColor);
 	}
 	.btn-primary, .badge-primary {
@@ -216,7 +212,7 @@
 	
 	/* headers */
 	.global-secondary-nav-section-header, .geeksidebar-section-header {
-		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
+		background: var(--moduleHBg);
 		color: var(--moduleHColor);
 	}
 	.quickbar-header {
@@ -263,7 +259,7 @@
 	/* panels */
 	.panel {
 		.panel-header, panel-header-lg {
-			background-color: var(--moduleHGrad0);
+			background-color: var(--moduleHBg);
 			color: var(--moduleHColor);
 			.panel-title > a:link {
 				color: var(--moduleHColor) !important;
@@ -271,7 +267,7 @@
 		}
 	}
 	.panel-default > .panel-heading, .panel-primary > .panel-heading {
-		background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));
+		background: var(--moduleHBg);
 		border: var(--moduleBorder);
 		color: var(--moduleHColor);
 	}
@@ -411,7 +407,47 @@
 			background: var(--popupBg) !important;
 			}
 	
-	/* file comments -- exception! */
+	/* media sidebar */
+	.media-sidebar {
+		background-color: var(--quoteBg) !important;
+		border: var(--menuBorder) !important;
+		btn-group {
+			border-bottom-color: var(--menuBorder) !important;
+		}
+		.btn-secondary {
+			color: var(--textColor) !important;
+		}
+	}
+			
+	/* ---- file page -- exception! ---- */
+
+	/* main body */
+	gg-breadcrumbs {
+		background-color: var(--moduleBg) !important;
+		.c-crumb:first-of-type a {
+			color: var(--linkColor) !important;
+		}
+	}
+	.dropdown-menu.show {
+		background-color: var(--menuBg);
+		a {
+			color: var(--textColor) !important;
+		}
+		button {
+			color: var(--textColor) !important;
+		}
+		border: var(--menuBorder);
+	}
+	.popover {
+		background-color: var(--menuBg);
+		border: var(--menuBorder);
+	}
+	gg-license-editable {
+		background-color: var(--moduleBg) !important;
+	}
+	.time.placeholder {
+		background: var(--moduleBg) !important;
+	}
 	.time, .timeline-body {
 		color: var(--textColor) !important;
 	}
@@ -449,7 +485,7 @@
 		color: var(--textColor) !important;
 		
 	}
-			
+	
 			
 	/* ====--------   LEGACY   -------==== */
 	.legacy {
@@ -460,11 +496,10 @@
 		.blog_post {
 			background: var(--moduleBg) !important;
 		}
-	
 		
 		/* modules */
 		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
-			background: linear-gradient(var(--moduleHGrad0), var(--moduleHGrad1));			
+			background: var(--moduleHBg);	
 			color: var(--moduleHColor);
 		}
 		.tabOn {
@@ -489,16 +524,23 @@
 			color: var(--moduleHColor);
 			outline: var(--menuBorder);
 		}
-		.forum_table td, .forum_index_table td {
-			color: var(--textColor);
-			background: var(--moduleBg);
-			outline: var(--moduleBorder);
-			border-bottom: var(--moduleBorder);
+		.forum_table, .forum_index_table {
+			tr:nth-child(2n) {
+				background-color: var(--tableColor2n);
+			}
+			tr:nth-child(2n+1) {
+				background-color: var(--tableColor2n1);
+			}
+			td {
+				background-color: transparent !important;
+				color: var(--textColor);
+				outline: var(--moduleBorder);
+				border-bottom: none;
+			}
 		}
 		.moduletable th {
 			color: var(--textColor);
 		}
-		
 		
 		textarea, .infobox, .messagebox,, .geekpoll, .popupbox, .bluebox, .whitebox, .profile_block, button, input, optgroup, select {
 			color: var(--textColor);
@@ -650,8 +692,11 @@
 		.mainmenutabs, .menu_login, .menu_quickbar, .profile_block, table#collectionitems, div.global-body-content > div, div.header , div.article {
 			background: var(--moduleBg);
 		}
-		.messagebox, .popupbox, div.recommend_block, .bluebox, div.wikitoc, input, textarea, .profile_title, .img-thumbnail, .menutab-open, .mainmenutabs li a.open, .submenutabs li a.open,.innermoduletable th, .geekpoll {
+		.messagebox, .popupbox, div.recommend_block, div.wikitoc, input, textarea, .profile_title, .img-thumbnail, .menutab-open, .mainmenutabs li a.open, .submenutabs li a.open,.innermoduletable th, .geekpoll {
 			background: var(--menuBg);
+		}
+		.bluebox {
+			background-color: var(--moduleHBg);
 		}
 		
 		/* borders & outlines */
@@ -717,9 +762,6 @@
 		}
 				
 		/* editor, buttons & inputs */
-		table.forum_table tbody tr:nth-child(2) td {
-			background-color: var(--menuBg) !important;
-		}
 		a.editbutton {
 			/* match colors */
 			border-top: 2px solid #ddd;
