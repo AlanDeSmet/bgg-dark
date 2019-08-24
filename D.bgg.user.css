@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.0
+@version        1.1.1
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -13,27 +13,27 @@
 == colors ==
 @var	color		pageBg				'Page Background'						#000
 @var	color		bodyBg				'Body Background'						#222
-@var	color		textColor			'Main text'								#fff
+@var	color		textColor			'Body text'								#fff
 
 @var 	color		headerBg			'Header background'						#446
 @var	color		headerColor			'Header text'							#eee
 
-@var	color		moduleBg			'Background of modules, posts etc.'		#000
-@var	color		moduleHBg			'Module header bg'						#446
+@var	color		moduleBg			'Module background'						#000
+@var	color		moduleHBg			'Module header background'				#446
 @var	color		moduleHColor		'Module header text'					#eee
-@var	color		moduleBorderColor	'Border of modules, posts etc.'			#444
+@var	color		moduleBorderColor	'Module border'							#444
 
 @var	color		zebraBg2n			'Zebra background (even rows)'			#000
 @var	color		zebraBg2n1			'Zebra background (even rows)'			#111
 @var	checkbox	fpRowBottomBorder	'Bottom border of rows in modules'		0
 
-@var	color		menuBg				'Background of menus, dropdowns etc.'	#222
-@var	color		menuBorderColor		'Border color of menus, dropdowns etc.'	#666
+@var	color		menuBg				'Menu & dropdown background'			#222
+@var	color		menuBorderColor		'Menu & dropdown borders'				#666
 
-@var	color		popupBg				'Background of pop-ups'					#333
+@var	color		popupBg				'Pop-up background'						#333
 
-@var	color		buttonPrimaryBg		'Primary buttons background'			#777
-@var	color		buttonPrimary		'primary buttons text'					#dc6
+@var	color		buttonPrimaryBg		'Button background'						#777
+@var	color		buttonPrimary		'Button text'							#dc6
 
 == geeklists, forum ==
 @var	color		quoteTitleBg		'Quote title background'				#446
