@@ -1,18 +1,18 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.0.1
+@version        1.1.0
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
-@description    Dark Mode for BoardGameGeek.com;  initally based on yzemaze's BGG UI Customizer 3.2.0
+@description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 
 @preprocessor stylus
 
 == colors ==
-@var	color		mainBg				'Page Background'						#000
-@var	color		mainBg2				'Body Background'						#222
+@var	color		pageBg				'Page Background'						#000
+@var	color		bodyBg				'Body Background'						#222
 @var	color		textColor			'Main text'								#fff
 
 @var 	color		headerBg			'Header background'						#446
@@ -23,8 +23,8 @@
 @var	color		moduleHColor		'Module header text'					#eee
 @var	color		moduleBorderColor	'Border of modules, posts etc.'			#444
 
-@var	color		fpColor2n			'Frontpage: bg of even rows'			#000
-@var	color		fpColor2n1			'… bg of odd rows'						#111
+@var	color		zebraBg2n			'Zebra background (even rows)'			#000
+@var	color		zebraBg2n1			'Zebra background (even rows)'			#111
 @var	checkbox	fpRowBottomBorder	'Bottom border of rows in modules'		0
 
 @var	color		menuBg				'Background of menus, dropdowns etc.'	#222
@@ -32,14 +32,10 @@
 
 @var	color		popupBg				'Background of pop-ups'					#333
 
-@var	color		tableColor2n		'Tables: bg of even rows'				#000
-@var	color		tableColor2n1		'… bg of odd rows'						#111
-
 @var	color		buttonPrimaryBg		'Primary buttons background'			#777
 @var	color		buttonPrimary		'primary buttons text'					#dc6
 
 == geeklists, forum ==
-@var	color		geeklistHeaderBg	'Background of geeklist headers'		#446
 @var	color		quoteTitleBg		'Quote title background'				#446
 @var	color		quoteTitleColor		'Quote title text '						#eee
 @var	color		quoteBorderColor	'Quote borders'							#555
@@ -87,18 +83,17 @@
 	:root {
 		--articleNew: solid 2px articleNew;
 		--articleSelected: solid 3px articleSelected;
+		--bodyBg: bodyBg;
 		--buttonPrimaryBg: buttonPrimaryBg;
 		--buttonPrimary: buttonPrimary;
 		--editHover: editHover;
+		--floatLeftNav: floatLeftNav;
 		--fontFamily: fontFamily;
 		--fontSizeXXL: fontSizeXXL;
 		--fontSizeXL: fontSizeXL;
 		--fontSizeL: fontSizeL;
 		--fontSizeM: fontSizeM;
 		--fontSizeS: fontSizeS;
-		--fpColor2n: fpColor2n;
-		--fpColor2n1: fpColor2n1;
-		--geeklistHeaderBg: geeklistHeaderBg;
 		--headerBg: headerBg;
 		--headerColor: headerColor;
 		--linkColor: linkColor;
@@ -107,33 +102,31 @@
 		--linkVisited: linkVisited;
 		--linkUnderlineStyle: linkUnderlineStyle;
 		--maxWidth: maxWidth;
-		--mainBg: mainBg;
-		--mainBg2: mainBg2;
 		--menuBg: menuBg;
 		--menuBorder: 1px solid menuBorderColor;
 		--moduleBg: moduleBg;
 		--moduleBorder: 1px solid moduleBorderColor;
 		--moduleHBg: moduleHBg;
 		--moduleHColor: moduleHColor;
+		--pageBg: pageBg;
 		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
 		--quoteTitleColor: quoteTitleColor;
 		--quoteBg: quoteBg;
 		--quoteColor: quoteColor;
 		--quoteBorder: 1px solid quoteBorderColor;
-		--floatLeftNav: floatLeftNav;
-		--tableColor2n: tableColor2n;
-		--tableColor2n1: tableColor2n1;
 		--textColor: textColor;
 		--textError: textError;
 		--textPositive: textPositive;
+		--zebraBg2n: zebraBg2n;
+		--zebraBg2n1: zebraBg2n1;
 	}
 	
 	
 	/* ========----  ENTIRE BODY  ----======== */
 	body, footer.global-footer {
 		color: var(--textColor);
-		background: var(--mainBg);
+		background: var(--pageBg);
 	}
 	
 	
@@ -234,7 +227,7 @@
 	
 	/* ====--------  CENTER content  --------==== */
 	.global-body-content {
-		background: var(--mainBg2);
+		background: var(--bodyBg);
 	}
 
 	
@@ -320,10 +313,10 @@
 	.geekcentral {
 		tr.moduleRow {
 			&:nth-child(2n) {
-				background: var(--fpColor2n);
+				background: var(--zebraBg2n);
 			}
 			&:nth-child(2n+1) {
-				background: var(--fpColor2n1);
+				background: var(--zebraBg2n1);
 			}
 		}
 	}
@@ -334,10 +327,10 @@
 	}
 	/* zebra striped tables */
 	table.salesreport tr.odd, .table-striped tr:nth-child(2n), .table-condensed tr:nth-child(2n), div.wrapper tr:nth-child(2n), .collection_table > tbody > tr:nth-child(2n), tr[bgcolor="#FFFFFF"] {
-		background: var(--tableColor2n);
+		background: var(--zebraBg2n);
 	}
 	table.salesreport tr.even, .table-striped tr:nth-child(2n+1), .table-striped > tbody > tr:nth-child(2n+1) > th, .table-striped > tbody > tr:nth-child(2n+1) > td , .table-condensed tr:nth-child(2n+1), div.wrapper tr:nth-child(2n+1), .collection_table > tbody > tr:nth-child(2n+1), tr[bgcolor="#ECEDEE"] {
-		background: var(--tableColor2n1);
+		background: var(--zebraBg2n1);
 	}
 	
 	/* geekmarket */
@@ -373,13 +366,14 @@
 	}
 	
 	/* game forum table */
-	.summary-border .summary-item:nth-child(2n) {
+	.summary-border {
 		border-bottom: var(--moduleBorder);
-		background-color: var(--tableColor2n);
-	}
-	.summary-border .summary-item:nth-child(2n+1) {
-		border-bottom: var(--moduleBorder);
-		background-color: var(--tableColor2n1);
+		.summary-item:nth-child(2n) {
+			background-color: var(--zebraBg2n);
+		}
+		.summary-item:nth-child(2n+1) {
+			background-color: var(--zebraBg2n1);
+		}	
 	}
 
 	/* image gallery & file comment quotes */
@@ -418,9 +412,8 @@
 			color: var(--textColor) !important;
 		}
 	}
-			
-	/* ---- file page -- exception! ---- */
 
+	/* ---- file page -- exception! ---- */
 	/* main body */
 	gg-breadcrumbs {
 		background-color: var(--moduleBg) !important;
@@ -487,185 +480,18 @@
 	}
 	
 			
-	/* ====--------   LEGACY   -------==== */
+	/* ====--------   LEGACY   -------==== 
+	* fonts
+	* backgrounds
+	* borders
+	* text
+	* a links
+	* inputs
+	*/
 	.legacy {
-		background: var(--mainBg2);
+		background: var(--bodyBg);
 		color: var(--textColor);
 		
-		/* blogposts */
-		.blog_post {
-			background: var(--moduleBg) !important;
-		}
-		
-		/* modules */
-		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
-			background: var(--moduleHBg);	
-			color: var(--moduleHColor);
-		}
-		.tabOn {
-			filter: brightness(80%);
-		}
-		.module_title, td.module_title + td > div a, td.modulecommands + td > div, td.modulecommands + td > div > a, .moduletable th a, .moduletable > tbody > tr:first-child, .moduletable .modulecommands, .modulecommands select, .modulecommands option {
-			color: var(--moduleHColor);
-		}
-
-		/* marketplace + images *rolleyes* */
-		table.moduletable > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
-			color: var(--moduleHColor);
-			font-size: var(--fontSizeXL);
-		}
-		.modulecommands option {
-			background: var(--menuBg);
-			border: var(--menuBorder);
-		}
-
-		/* tables */
-		.collection_table th, .forum_table th, .forum_index_table th {
-			color: var(--moduleHColor);
-			outline: var(--menuBorder);
-		}
-		.forum_table, .forum_index_table {
-			tr:nth-child(2n) {
-				background-color: var(--tableColor2n);
-			}
-			tr:nth-child(2n+1) {
-				background-color: var(--tableColor2n1);
-			}
-			td {
-				background-color: transparent !important;
-				color: var(--textColor);
-				outline: var(--moduleBorder);
-				border-bottom: none;
-			}
-		}
-		.moduletable th {
-			color: var(--textColor);
-		}
-		
-		textarea, .infobox, .messagebox,, .geekpoll, .popupbox, .bluebox, .whitebox, .profile_block, button, input, optgroup, select {
-			color: var(--textColor);
-		}
-		select {
-			background: var(--menuBg);
-		}
-		.post_numcomments, .dull, .darkgray, div.header {
-			color: var(--textColor);
-		}
-		
-		/* article borders */
-		div.article.subbed {
-			border: var(--articleNew);
-		}
-		div.article.selected, div.article.subbed_selected {
-			border: var(--articleSelected);
-		}
-		div.article dl {
-			border-bottom: var(--menuBorder);
-		}
-		div.article dd.left {
-			border-right: var(--menuBorder);
-		}
-		div.article dd.right, div.article dd.commands {
-			border-left: var(--menuBorder);
-		}
-	
-		/* quotes */
-		.quotetitle {
-			color: var(--quoteTitleColor);
-			background: var(--quoteTitleBg);
-			border: var(--quoteBorder);
-			border-bottom: none;
-		}
-		.quote {
-			color: var(--quoteColor);
-			background: var(--quoteBg);
-			border: var(--quoteBorder);
-		}
-
-		/* recommend pop-up */
-		.recspy_header {
-			background: var(--quoteTitleBg);
-		}
-		.recspy_box {
-			background: var(--popupBg);
-		}
-		
-		/* polls!  */
-		.outerpoll {
-			background: var(--moduleBg);	
-			}
-		.geekpoll {
-			background-color: var(--menuBg);
-			tr:nth-child(2n)  {
-				background: var(--tableColor2n);
-			}
-			tr:nth-child(2n+1)  {
-				background: var(--tableColor2n1);
-			}
-			tr.columnlabel {
-				background-color: var(--menuBG);
-			}
-		}	
-		.pollresults {
-			th, td, .answered {
-				background: transparent !important;
-			}
-			th.header {
-				background: var(--geeklistHeaderBg) !important;
-			}
-			tr:nth-child(2n)  {
-				background: var(--tableColor2n1) !important;
-			}
-			tr:nth-child(2n+1)  {
-				background: var(--tableColor2n) !important;
-			}
-			thead tr:nth-child(2)  {
-				background: var(--menuBg) !important;
-			}
-		}
-		
-		/* links */
-		a, a:link, .nav > li > a, .comment_button, .geeksub_minorlink a:link {
-			color: var(--linkColor);
-		}
-		a:hover, .menutab-open li a:hover, .geeksub_minorlink a:active, .comment_button:hover {
-			color: var(--linkHover) !important;
-			transition: none !important;
-		}
-		if linkUnderline {
-			a {
-				text-decoration: underline var(--linkUnderlineStyle);
-			}
-			a:hover {
-				text-decoration: underline var(--linkUnderlineStyle) !important;
-			}
-		}
-		else {
-			a, a:hover {
-				text-decoration: none !important;
-			}
-		}
-		a:visited, .geeksub_minorlink a:visited {
-			color: var(--linkVisited);
-		}
-		.forumlink, .objectlink {
-			a:visited, a:link, a:hover, a:active {
-				color: var(--textColor);
-			}
-		}
-
-		/* text colors */
-		.error, text-danger {
-			color: var(--textError);
-		}
-		.positive, .positive a, .storepositive, .storeprice, .price, .text-success {
-			color: var(--textPositive);
-		}
-		input {
-			color: inherit;
-			background-color: var(--menuBg) !important;
-		}
-	
 		/* fonts */
 		div.recommend_block dl.recommend *, .post_day {
 			font-family: var(--fontFamily) !important;
@@ -703,10 +529,134 @@
 		.menu_login, .menu_quickbar, .bluebox, div.header, div.recommend_block, div.article, div.comment_toolbar {
 			border: var(--menuBorder);
 		}
+		/* article borders */
+		div {
+			.article {
+				dl {
+					border-bottom: var(--menuBorder);
+				}
+				dd.left {
+					border-right: var(--menuBorder);
+				}
+				dd.right, dd.commands {
+					border-left: var(--menuBorder);
+				}
+			}
+			.subbed {
+				border: var(--articleNew);
+			}
+			.selected, .subbed_selected {
+				border: var(--articleSelected) !important;
+			}
+		}
+		
+		/* text colors */
+		.error, text-danger {
+			color: var(--textError);
+		}
+		.positive, .positive a, .storepositive, .storeprice, .price, .text-success {
+			color: var(--textPositive);
+		}
+		input {
+			color: inherit;
+			background-color: var(--menuBg) !important;
+		}
+
+		/* links */
+		a, a:link, .nav > li > a, .comment_button, .geeksub_minorlink a:link {
+			color: var(--linkColor);
+		}
+		a:hover, .menutab-open li a:hover, .geeksub_minorlink a:active, .comment_button:hover {
+			color: var(--linkHover) !important;
+			transition: none !important;
+		}
+		if linkUnderline {
+			a {
+				text-decoration: underline var(--linkUnderlineStyle);
+			}
+			a:hover {
+				text-decoration: underline var(--linkUnderlineStyle) !important;
+			}
+		}
+		else {
+			a, a:hover {
+				text-decoration: none !important;
+			}
+		}
+		a:visited, .geeksub_minorlink a:visited {
+			color: var(--linkVisited);
+		}
+		.forumlink, .objectlink {
+			a:visited, a:link, a:hover, a:active {
+				color: var(--textColor);
+			}
+		}
+		
+		/* inputs */
+		textarea, .infobox, .messagebox,, .geekpoll, .popupbox, .bluebox, .whitebox, .profile_block, button, input, optgroup, select {
+			color: var(--textColor);
+		}
+		select {
+			background: var(--menuBg);
+		}
+		.post_numcomments, .dull, .darkgray, div.header {
+			color: var(--textColor);
+		}
+				
+		
+		/* ---- common modules ---- */
+		
+		/* modules */
+		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
+			background: var(--moduleHBg);	
+			color: var(--moduleHColor);
+		}
+		.tabOn {
+			filter: brightness(80%);
+		}
+		.module_title, td.module_title + td > div a, td.modulecommands + td > div, td.modulecommands + td > div > a, .moduletable th a, .moduletable > tbody > tr:first-child, .moduletable .modulecommands, .modulecommands select, .modulecommands option {
+			color: var(--moduleHColor);
+		}
+
+		/* marketplace + images *rolleyes* */
+		table.moduletable > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
+			color: var(--moduleHColor);
+			font-size: var(--fontSizeXL);
+		}
+		.modulecommands option {
+			background: var(--menuBg);
+			border: var(--menuBorder);
+		}
+
+		/* tables */
+		.collection_table th, .forum_table th, .forum_index_table th {
+			color: var(--moduleHColor);
+			outline: var(--menuBorder);
+		}
+		.forum_table, .forum_index_table {
+			tr:nth-child(2n) {
+				background-color: var(--zebraBg2n);
+			}
+			tr:nth-child(2n+1) {
+				background-color: var(--zebraBg2n1);
+			}
+			td {
+				background-color: transparent !important;
+				color: var(--textColor);
+				outline: var(--moduleBorder);
+				border-bottom: none;
+			}
+		}
+		.moduletable th {
+			color: var(--textColor);
+		}
+		
+		
+		/* ---- page specific stuff ---- */
 		
 		/* geeklists */
 		.geeklist_title, .geeklist_item_title, .comment_toolbar {
-			background: var(--geeklistHeaderBg);
+			background: var(--headerBg);
 		}
 		#header {
 			border-top: var(--menuBorder);
@@ -722,10 +672,10 @@
 			border: var(--moduleBorder) !important;
 		}
 		table.gm_messages:nth-child(2n) tr[style] {
-			background: var(--tableColor2n1) !important;
+			background: var(--zebraBg2n1) !important;
 		}
 		table.gm_messages:nth-child(2n+1) tr[style] {
-			background: var(--tableColor2n) !important;
+			background: var(--zebraBg2n) !important;
 		}
 
 		/* collection */
@@ -739,6 +689,74 @@
 		.editfield_active {
 			background: var(--menuBg);
 		} 
+		
+		
+		/* polls!  */
+		.outerpoll {
+			background: var(--moduleBg);	
+			}
+		.geekpoll {
+			background-color: var(--menuBg);
+			th {
+				background-color: var(--moduleHBg);
+			}
+			tr:nth-child(2n)  {
+				background: var(--zebraBg2n);
+			}
+			tr:nth-child(2n+1)  {
+				background: var(--zebraBg2n1);
+			}
+			tr.columnlabel {
+				background-color: var(--menuBG);
+			}
+		}	
+		.pollresults {
+			th, td, .answered {
+				background: transparent !important;
+			}
+			th.header {
+				background: var(--headerBg) !important;
+			}
+			tr:nth-child(2n)  {
+				background: var(--zebraBg2n1) !important;
+			}
+			tr:nth-child(2n+1)  {
+				background: var(--zebraBg2n) !important;
+			}
+			thead tr:nth-child(2)  {
+				background: var(--menuBg) !important;
+			}
+		}
+		
+		
+		/* quotes */
+		.quotetitle {
+			color: var(--quoteTitleColor);
+			background: var(--quoteTitleBg);
+			border: var(--quoteBorder);
+			border-bottom: none;
+		}
+		.quote {
+			color: var(--quoteColor);
+			background: var(--quoteBg);
+			border: var(--quoteBorder);
+		}
+
+		/* recommend pop-up */
+		.recspy_header {
+			background: var(--quoteTitleBg);
+		}
+		.recspy_box {
+			background: var(--popupBg);
+		}
+		
+		/* blogposts */
+		.blog_post {
+			background: var(--moduleBg) !important;
+		}
+		
+		
+		/* ---- inline-specific overrides ---- */
 		
 		/* ratings & buttons */
 		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
