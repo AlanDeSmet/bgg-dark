@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.1
+@version        1.1.2
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -522,7 +522,7 @@
 			background: var(--menuBg);
 		}
 		.bluebox {
-			background-color: var(--moduleHBg);
+			background-color: var(--moduleBg);
 		}
 		
 		/* borders & outlines */
@@ -667,6 +667,9 @@
 		}
 		
 		/* geekmail */
+		div.geekpages {
+			background: var(--moduleBg) !important;
+		}
 		tr:first-child > td.sf > div.sf, .gm_controlbar, div.geekpages:nth-child(2) {
 			background: var(--moduleBg) !important;
 			border: var(--moduleBorder) !important;
@@ -718,10 +721,10 @@
 				background: var(--headerBg) !important;
 			}
 			tr:nth-child(2n)  {
-				background: var(--zebraBg2n1) !important;
+				background: var(--zebraBg2n1);
 			}
 			tr:nth-child(2n+1)  {
-				background: var(--zebraBg2n) !important;
+				background: var(--zebraBg2n);
 			}
 			thead tr:nth-child(2)  {
 				background: var(--menuBg) !important;
