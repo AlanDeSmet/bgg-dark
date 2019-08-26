@@ -77,10 +77,10 @@
 @-moz-document domain("boardgamegeek.com"), domain("bgg.cc"), domain("rpggeek.com"), domain("videogamegeek.com") {
 	:root {
 		--bodyBg: bodyBg;
+		--borderNew: solid 2px colorNew;
+		--borderSelected: solid 2px colorSelected;
 		--buttonPrimaryBg: buttonPrimaryBg;
 		--buttonPrimary: buttonPrimary;
-		--colorNew: solid 2px colorNew;
-		--colorSelected: solid 2px colorSelected;
 		--floatLeftNav: floatLeftNav;
 		--fontFamily: fontFamily;
 		--fontSizeXXL: fontSizeXXL;
@@ -91,7 +91,7 @@
 		--headerBg: headerBg;
 		--headerColor: headerColor;
 		--linkColor: linkColor;
-		--linkHover: colorNew;
+		--linkHover: colorSelected;
 		--linkSelected: colorSelected;
 		--linkVisited: linkVisited;
 		--linkUnderlineStyle: linkUnderlineStyle;
@@ -535,10 +535,10 @@
 				}
 			}
 			.subbed {
-				border: var(--colorNew);
+				border: var(--borderNew);
 			}
 			.selected, .subbed_selected {
-				border: var(--colorSelected) !important;
+				border: var(--borderSelected) !important;
 			}
 		}
 		
@@ -680,11 +680,11 @@
 		}
 		.editfield:hover {
 			background: var(--popupBg);
-			border: var(--colorSelected);
+			border: var(--borderSelected);
 		}		
 		.editfield_active {
 			background: var(--popupBg);
-			border: var(--colorNew) !important;
+			border: var(--borderNew) !important;
 		} 
 		
 		
