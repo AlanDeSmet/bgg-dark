@@ -559,7 +559,7 @@
 		}
 
 		/* links */
-		a, a:link, .nav > li > a, .comment_button, .geeksub_minorlink a:link {
+		a, a:link, .nav > li > a, .comment_button, .geeksub_minorlink a:link, button.link {
 			color: var(--linkColor);
 		}
 		a:hover, .menutab-open li a:hover, .geeksub_minorlink a:active, .comment_button:hover {
