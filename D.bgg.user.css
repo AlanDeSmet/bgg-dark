@@ -50,10 +50,10 @@
 @var	color		editHover			'Edit hover (games/collection view)'	#fdad2f
 
 == links ==
-@var	color		linkColor			'Links'									#88c
+@var	color		linkColor			'Links'									#88d
+@var	color		linkVisited			'Link visited'							#99b
 @var	color		linkHover			'Link hover'							#dc6
 @var	color		linkSelected		'Link selected'							#dc6
-@var	color		linkVisited			'Link visited'							#c8d
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
