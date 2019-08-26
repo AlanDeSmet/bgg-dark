@@ -40,20 +40,17 @@
 @var	color		quoteBg				'Quote body background'					#222
 @var	color		quoteColor			'Quote body text'						#ccc
 
-== articles ==
-@var	color		articleSelected		'Border of selected article'			#dc6
-@var	color		articleNew			'Border of new article'					#c8d
+== highlight borders ==
+@var	color		colorSelected		'Color of selected article/item/link'	#dc6
+@var	color		colorNew			'Color of new article/item/link'		#bbd
 
 == text colors ==
 @var	color		textPositive		'Text: positive values'					#4a4
 @var	color		textError			'Text: negative values, errors'			#f50
-@var	color		editHover			'Edit hover (games/collection view)'	#dc6
 
 == links ==
 @var	color		linkColor			'Links'									#88d
 @var	color		linkVisited			'Link visited'							#99b
-@var	color		linkHover			'Link hover'							#dc6
-@var	color		linkSelected		'Link selected'							#dc6
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
@@ -79,12 +76,11 @@
 
 @-moz-document domain("boardgamegeek.com"), domain("bgg.cc"), domain("rpggeek.com"), domain("videogamegeek.com") {
 	:root {
-		--articleNew: solid 2px articleNew;
-		--articleSelected: solid 2px articleSelected;
 		--bodyBg: bodyBg;
 		--buttonPrimaryBg: buttonPrimaryBg;
 		--buttonPrimary: buttonPrimary;
-		--editHover: editHover;
+		--colorNew: solid 2px colorNew;
+		--colorSelected: solid 2px colorSelected;
 		--floatLeftNav: floatLeftNav;
 		--fontFamily: fontFamily;
 		--fontSizeXXL: fontSizeXXL;
@@ -95,8 +91,8 @@
 		--headerBg: headerBg;
 		--headerColor: headerColor;
 		--linkColor: linkColor;
-		--linkHover: linkHover;
-		--linkSelected: linkSelected;
+		--linkHover: colorNew;
+		--linkSelected: colorSelected;
 		--linkVisited: linkVisited;
 		--linkUnderlineStyle: linkUnderlineStyle;
 		--maxWidth: maxWidth;
@@ -539,10 +535,10 @@
 				}
 			}
 			.subbed {
-				border: var(--articleNew);
+				border: var(--colorNew);
 			}
 			.selected, .subbed_selected {
-				border: var(--articleSelected) !important;
+				border: var(--colorSelected) !important;
 			}
 		}
 		
@@ -683,10 +679,12 @@
 			border-top: var(--menuBorder);
 		}
 		.editfield:hover {
-			background: var(--editHover);
+			background: var(--popupBg);
+			border: var(--colorSelected);
 		}		
 		.editfield_active {
-			background: var(--menuBg);
+			background: var(--popupBg);
+			border: var(--colorNew) !important;
 		} 
 		
 		
