@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.2
+@version        1.1.3
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -19,8 +19,6 @@
 @var	color		headerColor			'Header text'							#eee
 
 @var	color		moduleBg			'Module background'						#000
-@var	color		moduleHBg			'Module header background'				#446
-@var	color		moduleHColor		'Module header text'					#eee
 @var	color		moduleBorderColor	'Module border'							#444
 
 @var	color		zebraBg2n			'Zebra background (even rows)'			#000
@@ -106,8 +104,6 @@
 		--menuBorder: 1px solid menuBorderColor;
 		--moduleBg: moduleBg;
 		--moduleBorder: 1px solid moduleBorderColor;
-		--moduleHBg: moduleHBg;
-		--moduleHColor: moduleHColor;
 		--pageBg: pageBg;
 		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
@@ -205,19 +201,19 @@
 	
 	/* headers */
 	.global-secondary-nav-section-header, .geeksidebar-section-header {
-		background: var(--moduleHBg);
-		color: var(--moduleHColor);
+		background: var(--headerBg);
+		color: var(--headerColor);
 	}
 	.quickbar-header {
 		background-color: var(--menuBg);
 	}
 	/* link background & color overrides */
 	a.toggler-caret, a.global-secondary-nav-section-header {
-		color: var(--moduleHColor) !important;
+		color: var(--headerColor) !important;
 	}
 	.global-secondary-nav-section .toggler-caret-target,  {
 		background: var(--moduleBg);
-		color: var(--moduleHColor) !important;
+		color: var(--headerColor) !important;
 	}
 	/* list item separators */
 	ul.global-secondary-nav-links > li {
@@ -252,17 +248,17 @@
 	/* panels */
 	.panel {
 		.panel-header, panel-header-lg {
-			background-color: var(--moduleHBg);
-			color: var(--moduleHColor);
+			background-color: var(--headerBg);
+			color: var(--headerColor);
 			.panel-title > a:link {
-				color: var(--moduleHColor) !important;
+				color: var(--headerColor) !important;
 			}
 		}
 	}
 	.panel-default > .panel-heading, .panel-primary > .panel-heading {
-		background: var(--moduleHBg);
+		background: var(--headerBg);
 		border: var(--moduleBorder);
-		color: var(--moduleHColor);
+		color: var(--headerColor);
 	}
 
 	/* fonts */
@@ -608,19 +604,19 @@
 		
 		/* modules */
 		th, .bggstore_widget_controls, .geekcollection_pager, .menu_noquickbar_bottom, .hotitems th, .spotlight_red th, .spotlight_orange th, .moduletable .geekpoll th, .geekpoll tr th.questiontext, .profile_table th, .menu_table, .tabOn, .tabOff, .geekmail_header, div.recommendbox_str  {
-			background: var(--moduleHBg);	
-			color: var(--moduleHColor);
+			background: var(--headerBg);	
+			color: var(--headerColor);
 		}
 		.tabOn {
 			filter: brightness(80%);
 		}
 		.module_title, td.module_title + td > div a, td.modulecommands + td > div, td.modulecommands + td > div > a, .moduletable th a, .moduletable > tbody > tr:first-child, .moduletable .modulecommands, .modulecommands select, .modulecommands option {
-			color: var(--moduleHColor);
+			color: var(--headerColor);
 		}
 
 		/* marketplace + images *rolleyes* */
 		table.moduletable > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) {
-			color: var(--moduleHColor);
+			color: var(--headerColor);
 			font-size: var(--fontSizeXL);
 		}
 		.modulecommands option {
@@ -630,7 +626,7 @@
 
 		/* tables */
 		.collection_table th, .forum_table th, .forum_index_table th {
-			color: var(--moduleHColor);
+			color: var(--headerColor);
 			outline: var(--menuBorder);
 		}
 		.forum_table, .forum_index_table {
@@ -701,7 +697,7 @@
 		.geekpoll {
 			background-color: var(--menuBg);
 			th {
-				background-color: var(--moduleHBg);
+				background-color: var(--headerBg);
 			}
 			tr:nth-child(2n)  {
 				background: var(--zebraBg2n);
