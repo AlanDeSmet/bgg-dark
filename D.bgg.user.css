@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.3
+@version        1.1.4
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -256,7 +256,10 @@
 		border: var(--moduleBorder);
 		color: var(--headerColor);
 	}
-
+	.panel-header-sm {
+		background: transparent !important;
+	}
+	
 	/* fonts */
 	.game-header-title-info h1 {
 		font-family: var(--fontFamily) !important;		
@@ -392,6 +395,9 @@
 	div[style*="margin:1em"], div.select-free, div.quickplay_create[style*="background:#fff"] {
 			background: var(--popupBg) !important;
 			}
+	.checkbox label ,.collection-dropdown, .dropdown-menu > li > a {
+		color: var(--textColor);
+	}
 	
 	/* media sidebar */
 	.media-sidebar {
@@ -404,7 +410,9 @@
 			color: var(--textColor) !important;
 		}
 	}
-
+	
+	
+	
 	/* ---- file page -- exception! ---- */
 	/* main body */
 	gg-breadcrumbs {
@@ -471,7 +479,7 @@
 		
 	}
 	
-			
+	
 	/* ====--------   LEGACY   -------==== 
 	* fonts
 	* backgrounds
@@ -654,7 +662,7 @@
 			border-top: var(--menuBorder);
 		}
 		.infobox {
-			background: var(--menuBg);
+			background: var(--moduleBg);
 			border: var(--moduleBorder);
 		}
 		
@@ -676,7 +684,7 @@
 		/* collection */
 		.collection_table td {
 			border-left: var(--moduleBorder);
-			border-top: var(--menuBorder);
+			border-top: var(--moduleBorder);
 		}
 		.editfield:hover {
 			background: var(--popupBg);
@@ -755,6 +763,11 @@
 		
 		/* ---- inline-specific overrides ---- */
 		
+		/* geekbadge */
+		div#badgeowners div[style] {
+				background: var(--headerBg) !important;
+			}
+					
 		/* ratings & buttons */
 		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
 			background: var(--buttonPrimaryBg) !important;
@@ -775,7 +788,7 @@
 				color: var(--textColor);
 			}
 		}
-				
+			
 		/* editor, buttons & inputs */
 		a.editbutton {
 			/* match colors */
