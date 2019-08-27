@@ -15,7 +15,7 @@
 @var	color		bodyBg				'Body Background'						#222
 @var	color		textColor			'Body text'								#eee
 
-@var 	color		headerBg			'Header background'						#446
+@var 	color		headerBg			'Header background'						#447
 @var	color		headerColor			'Header text'							#fff
 
 @var	color		moduleBg			'Module background'						#000
@@ -34,7 +34,7 @@
 @var	color		buttonPrimary		'Button text'							#bbb
 
 == geeklists, forum ==
-@var	color		quoteTitleBg		'Quote title background'				#557
+@var	color		quoteTitleBg		'Quote title background'				#446
 @var	color		quoteTitleColor		'Quote title text '						#ddd
 @var	color		quoteBorderColor	'Quote borders'							#555
 @var	color		quoteBg				'Quote body background'					#222
@@ -49,8 +49,8 @@
 @var	color		textError			'Text: negative values, errors'			#f50
 
 == links ==
-@var	color		linkColor			'Links'									#88d
-@var	color		linkVisited			'Link visited'							#99b
+@var	color		linkColor			'Links'									#88e
+@var	color		linkVisited			'Link visited'							#99c
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
