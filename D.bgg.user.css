@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.5
+@version        1.1.4
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -610,12 +610,13 @@
 				div {
 					color: var(--textColor) !important; 
 				}
+			}
+			div:hover {
 				div:hover {
-					background-color: var(--itemSelected);
+					background-color: var(--itemSelected) !important;
 					color: var(--headerBg) !important;
 				}
 			}
-			
 		}
 		
 		/* ---- common modules ---- */
