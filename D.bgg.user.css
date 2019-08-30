@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.4
+@version        1.1.5
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
@@ -48,7 +48,7 @@
 @var	color		colorNew			'Color of additional item(s)'			#bbd
 
 == links ==
-@var	color		linkColor			'Links'									#88e
+@var	color		linkColor			'Links'									#88d
 @var	color		linkVisited			'Link visited'							#99c
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
@@ -82,6 +82,7 @@
 		--fontSize: fontSize;
 		--headerBg: headerBg;
 		--headerColor: headerColor;
+		--itemSelected: colorSelected;
 		--linkColor: linkColor;
 		--linkHover: colorSelected;
 		--linkSelected: colorSelected;
@@ -267,11 +268,11 @@
 	}
 	.btn.btn-sm, .btn-group-sm > .btn, h4, .game-header-title-summary, .nav.nav-tabs > li > a, .credits, .credits > * > *, .credits-cta, .rating-stars-title, .panel-header-sm .panel-title, .fs-responsive-sm, .game-classification, .game-marketplace, .summary-video-item > div, .summary-item-description > *, .summary-item-counts > *, .summary-item-meta, .summary-item-meta > *, .summary-item-actions > *, .summary-item-actions-below > *, ul.list-block-border > li > a, .global-footer p, .condition-label, .pagination-sm > li > a, .pagination-sm > li > span, .badge, a.tag, .avatarblock {
 		font-family: var(--fontFamily) !important;
-		font-size: calc(var(--fontSize) / 1.12) !important;
+		font-size: calc(var(--fontSize) / 1.14) !important;
 	}
 	.btn-xs, .btn-group-xs > .btn, .fs-xs, a.global-header-user-notification-action, button.global-header-user-notification-action, .global-secondary-nav-section-header, .global-secondary-nav-section-header.toggler-caret, .quickbar-header button.btn,, ul.global-secondary-nav-links > li, .hotness-item-title, .game-header-flags, .gameplay-item-secondary, .game-itemid, .text-domain, .summary-item-tag a, .summary-media-grid-count, .summary-item-pagination.pagination > li > a, .summary-item-pagination.pagination > li > span, .summary-file .summary-file-type a {
 		font-family: var(--fontFamily) !important;
-		font-size: calc(var(--fontSize) / 1.17) !important;
+		font-size: calc(var(--fontSize) / 1.23) !important;
 	}
 	/* text-colors */
 	h1, h2, h3, h4, h5, h6, p, .dropdown-header, .panel-heading, .text-muted, .summary-sale-item-price {
@@ -499,11 +500,11 @@
 		}
 		.objectlink > a, .forumlink > a, .modulecommands, .pager, .sf, table.sf td, .post_numcomments, .smallerfont, .tabOn, .tabOff, .geekmail_header, .gm_date, .collection_table td, .owned, .wanted, .fortrade, .wishlist, .prevowned, .wanttoplay, .rating span, .ratingtext, #blog_description, .post_categories ul li, .post_nlinks ul li, .dropdown-header, .geekinput_medium, div.wikitoc, a.tag, .avatarblock {
 			font-family: var(--fontFamily) !important;
-			font-size: calc(var(--fontSize) / 1.12) !important;
+			font-size: calc(var(--fontSize) / 1.14) !important;
 		}
 		.geekpages, .pages, .comment_button, .comment_button_disabled, .gallery_caption, .tagbar-inner, .post_author, .post_controls, .post_tstamp, div[style*="9pt"], div.recommendbox_str {
 			font-family: var(--fontFamily) !important;
-			font-size: calc(var(--fontSize) / 1.17) !important;
+			font-size: calc(var(--fontSize) / 1.23) !important;
 		}
 		
 		/* backgrounds */
@@ -594,7 +595,28 @@
 		.post_numcomments, .dull, .darkgray, div.header {
 			color: var(--textColor);
 		}
-				
+		
+		/* editer insert Geek link */
+		.searchbox_inner {
+			background: var(--popupBg);
+			/* un-Zebra */
+			tr {
+				background: var(--menuBg) !important;
+			}
+		}
+		.searchbox_results {
+			background: var(--menuBg);
+			div {
+				div {
+					color: var(--textColor) !important; 
+				}
+				div:hover {
+					background-color: var(--itemSelected);
+					color: var(--headerBg) !important;
+				}
+			}
+			
+		}
 		
 		/* ---- common modules ---- */
 		
@@ -796,5 +818,6 @@
 		textarea[style] {
 			width:100% !important;
 		}
+			
 	}
 }	
