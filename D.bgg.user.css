@@ -101,6 +101,7 @@
 		--quoteColor: quoteColor;
 		--quoteBorder: 1px solid quoteBorderColor;
 		--textColor: textColor;
+		--textGold: #990;
 		--textError: textError;
 		--textPositive: textPositive;
 		--zebraBg2n: zebraBg2n;
@@ -788,7 +789,7 @@
 			background: var(--buttonPrimaryBg) !important;
 			color: var(--buttonColor);
 		} 	
-		/* Flag thread */
+		/* Flag or Tip */
 		div[style*="background:lightsteelblue"] {
 			background-color: var(--moduleBg) !important;
 			color: var(--textColor);
@@ -801,6 +802,9 @@
 			}
 			a[target] {
 				color: var(--textColor);
+			}
+			div ul li a {
+				color: var(--textGold);
 			}
 		}
 			
