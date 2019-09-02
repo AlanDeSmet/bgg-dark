@@ -788,11 +788,15 @@
 		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
 			background: var(--buttonPrimaryBg) !important;
 			color: var(--buttonColor);
-		} 	
+		}
+
 		/* Flag or Tip */
 		div[style*="background:lightsteelblue"] {
 			background-color: var(--moduleBg) !important;
 			color: var(--textColor);
+			div {
+				font-size: calc(var(--fontSize) / 1.14) !important;
+			}
 		}
 		div[style*="background:white"] {
 			background-color: var(--quoteBg) !important;
@@ -802,6 +806,9 @@
 			}
 			a[target] {
 				color: var(--textColor);
+			}
+			div a {
+				font-size: calc(var(--fontSize) / 1.14) !important;
 			}
 			div ul li a {
 				color: var(--textGold);
