@@ -101,7 +101,7 @@
 		--quoteColor: quoteColor;
 		--quoteBorder: 1px solid quoteBorderColor;
 		--textColor: textColor;
-		--textGold: #990;
+		--textGold: #990;  /* phantom error */
 		--textError: textError;
 		--textPositive: textPositive;
 		--zebraBg2n: zebraBg2n;
