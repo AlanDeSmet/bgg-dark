@@ -42,14 +42,14 @@
 == text colors ==
 @var	color		textPositive		'Text: positive values'					#4a4
 @var	color		textError			'Text: negative values, errors'			#f50
+@var	color		textGold			'Text: GeekGold'						#990
 
 == highlight borders ==
 @var	color		colorSelected		'Color of selected item'				#dc6
-@var	color		colorNew			'Color of additional item(s)'			#bbd
+@var	color		colorHighlight		'Color of highlighted item(s)'			#bbd
 
 == links ==
 @var	color		linkColor			'Links'									#88d
-@var	color		linkVisited			'Link visited'							#99c
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
@@ -73,7 +73,7 @@
 @-moz-document domain("boardgamegeek.com"), domain("bgg.cc"), domain("rpggeek.com"), domain("videogamegeek.com") {
 	:root {
 		--bodyBg: bodyBg;
-		--borderNew: solid 2px colorNew;
+		--borderNew: solid 2px colorHighlight;
 		--borderSelected: solid 2px colorSelected;
 		--buttonPrimaryBg: buttonPrimaryBg;
 		--buttonPrimary: buttonPrimary;
@@ -86,7 +86,7 @@
 		--linkColor: linkColor;
 		--linkHover: colorSelected;
 		--linkSelected: colorSelected;
-		--linkVisited: linkVisited;
+		--linkVisited: colorHighlight;
 		--linkUnderlineStyle: linkUnderlineStyle;
 		--maxWidth: maxWidth;
 		--menuBg: menuBg;
@@ -101,8 +101,8 @@
 		--quoteColor: quoteColor;
 		--quoteBorder: 1px solid quoteBorderColor;
 		--textColor: textColor;
-		--textGold: #990;  /* phantom error */
-		--textError: textError;
+		--textError: textError;	
+		--textGold: textGold;
 		--textPositive: textPositive;
 		--zebraBg2n: zebraBg2n;
 		--zebraBg2n1: zebraBg2n1;
