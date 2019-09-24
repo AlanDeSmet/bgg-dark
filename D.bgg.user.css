@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.8
+@version        1.1.9
+@description    Dark Mode for BoardGameGeek.com
+@author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
 @updateURL		https://raw.githubusercontent.com/GrauGeist/bgg-dark/master/D.bgg.user.css
 @supportURL 	https://boardgamegeek.com/article/32693209#32693209
-@description    Dark Mode for BoardGameGeek.com
-@author         GrauGeist
 
 @preprocessor stylus
 
@@ -117,8 +117,8 @@
 	
 	
 	/* ====--------  TOP header  --------==== */
-	.global-header {
-		background: var(--headerBg);
+	.global-header, body gg-header header {
+		background: var(--headerBg) !important;
 		border-bottom: 1px solid var(--textColor);
 	}
 	.global-header-nav-primary {
@@ -197,6 +197,14 @@
 	.quickbar-header {
 		background-color: var(--menuBg);
 	}
+	/* Files version */
+	.geeksidebar-section-body {
+		background-color: var(--moduleBg) !important;
+		.geeksidebar-links a {
+			color: var(--headerColor) !important;
+		}
+	}
+	
 	/* link background & color overrides */
 	a.toggler-caret, a.global-secondary-nav-section-header {
 		color: var(--headerColor) !important;
