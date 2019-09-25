@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.9
+@version        1.1.10
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -110,6 +110,11 @@
 	
 		
 	/* ========----  ENTIRE BODY  ----======== */
+	html {
+		background-color: var(--pageBg);
+		color: var(--textColor);
+	}
+
 	body, footer.global-footer {
 		color: var(--textColor);
 		background: var(--pageBg);
@@ -186,6 +191,7 @@
 	
 	/* navigation bar borders */
 	.global-secondary-nav-section, .geeksidebar-section {
+		background: var(--bodyBg);
 		border: var(--moduleBorder);
 	}
 	
@@ -220,11 +226,9 @@
 	
 	
 	/* ====--------  CENTER content  --------==== */
-	.global-body-content {
-		background: var(--bodyBg);
-	}
-
+	/* (placeholder) */
 	
+
 	/* ====--------  BGG Front page  --------==== */
 	/* hide specific modules if set */
 	if announcementHide {
@@ -240,6 +244,14 @@
 	if geekpreviewHide {
 		div.geekcentral_module > center > a[href*="/geekpreview"]{
 		    display: none;
+		}
+	}
+	
+	/* editbox */
+	.geekcentral-controls {
+		background-color: var(--menuBg);
+		.geekcentral-controls__edit-link {
+			color: var(--buttonPrimary);
 		}
 	}
 
