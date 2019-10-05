@@ -54,7 +54,7 @@
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
 == fonts ==
-@var	range		fontSize			"Font Size (basic text)"				[16,8,32,1,"px"]
+@var	range		fontSize			"Font Size (basic text)"				[15,10,20,1,"px"]
 @var	select		fontFamily			"Font Family"							["verdana*", "arial", "sans-serif", "proportional", "default"]
 
 == options ==
