@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.10
+@version        1.1.11
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -757,7 +757,13 @@
 			background: var(--popupBg);
 			border: var(--borderNew) !important;
 		} 
-		
+		.collectionfilter_commandbar {
+			background: var(--quoteTitleBg);
+		}
+		.collectionfilter_body {
+			background: var(--menuBg);
+		}
+	
 		
 		/* polls!  */
 		.outerpoll {
