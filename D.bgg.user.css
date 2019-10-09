@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.12
+@version        1.1.13
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -11,14 +11,12 @@
 @preprocessor stylus
 
 == colors ==
-@var	color		pageBg				'Page Background'						#000
-@var	color		bodyBg				'Body Background'						#222
+@var	color		blackBg				'BLACK Background'						#000
 @var	color		textColor			'Body text'								#eee
 
 @var 	color		headerBg			'Header background'						#447
 @var	color		headerColor			'Header text'							#fff
 
-@var	color		moduleBg			'Module background'						#000
 @var	color		moduleBorderColor	'Module border'							#444
 
 @var	color		zebraBg2n			'Zebra background (even rows)'			#000
@@ -72,7 +70,7 @@
 
 @-moz-document domain("boardgamegeek.com"), domain("bgg.cc"), domain("rpggeek.com"), domain("videogamegeek.com") {
 	:root {
-		--bodyBg: bodyBg;
+		--blackBg: blackBg;
 		--borderNew: solid 2px colorHighlight;
 		--borderSelected: solid 2px colorSelected;
 		--buttonPrimaryBg: buttonPrimaryBg;
@@ -91,9 +89,7 @@
 		--maxWidth: maxWidth;
 		--menuBg: menuBg;
 		--menuBorder: 1px solid menuBorderColor;
-		--moduleBg: moduleBg;
 		--moduleBorder: 1px solid moduleBorderColor;
-		--pageBg: pageBg;
 		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
 		--quoteTitleColor: quoteTitleColor;
@@ -111,13 +107,13 @@
 		
 	/* ========----  ENTIRE BODY  ----======== */
 	html {
-		background-color: var(--pageBg);
+		background-color: var(--blackBg);
 		color: var(--textColor);
 	}
 
 	body, footer.global-footer {
+		background: var(--blackBg);
 		color: var(--textColor);
-		background: var(--pageBg);
 	}
 	
 	
@@ -166,7 +162,7 @@
 		background: var(--textPositive);
 	}
 	.global-header-nav-search-advanced a:hover {
-		background: var(--moduleBg);
+		background: var(--blackBg);
 	}
 
 	
@@ -191,7 +187,7 @@
 	
 	/* navigation bar borders */
 	.global-secondary-nav-section, .geeksidebar-section {
-		background: var(--bodyBg);
+		background: var(--menuBg);
 		border: var(--moduleBorder);
 	}
 	
@@ -205,7 +201,7 @@
 	}
 	/* Files version */
 	.geeksidebar-section-body {
-		background-color: var(--moduleBg) !important;
+		background-color: var(--blackBg) !important;
 		.geeksidebar-links a {
 			color: var(--headerColor) !important;
 		}
@@ -216,7 +212,7 @@
 		color: var(--headerColor) !important;
 	}
 	.global-secondary-nav-section .toggler-caret-target,  {
-		background: var(--moduleBg);
+		background: var(--blackBg);
 		color: var(--headerColor) !important;
 	}
 	/* list item separators */
@@ -364,7 +360,7 @@
 		color: white;
 	}
 	.game-nav-tabs, .global-body-content-primary {
-		background: var(--moduleBg);
+		background: var(--blackBg);
 	}
 	.well {
 		background: var(--menuBg) !important;
@@ -398,7 +394,7 @@
 
 	/* expandable overlay fade */
 	.expandable div.expandable-envelope p.expandable-overlay {
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--moduleBg));
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--blackBg));
 	}
 	
 	/* collection pop-ups! */
@@ -426,7 +422,7 @@
 	/* ---- file page -- exception! ---- */
 	/* main body */
 	gg-breadcrumbs {
-		background-color: var(--moduleBg) !important;
+		background-color: var(--blackBg) !important;
 		.c-crumb:first-of-type a {
 			color: var(--linkColor) !important;
 		}
@@ -446,16 +442,16 @@
 		border: var(--menuBorder);
 	}
 	gg-license-editable {
-		background-color: var(--moduleBg) !important;
+		background-color: var(--blackBg) !important;
 	}
 	.time.placeholder {
-		background: var(--moduleBg) !important;
+		background: var(--blackBg) !important;
 	}
 	.time, .timeline-body {
 		color: var(--textColor) !important;
 	}
 	.c-container {
-		background: var(--moduleBg) !important;
+		background: var(--blackBg) !important;
 		border: var(--moduleBorder) !important;
 		color: var(--textColor);
 	
@@ -530,7 +526,7 @@
 	* inputs
 	*/
 	.legacy {
-		background: var(--bodyBg);
+		background: var(--menuBg);
 		color: var(--textColor);
 		
 		/* fonts */
@@ -557,13 +553,13 @@
 		
 		/* backgrounds */
 		.mainmenutabs, .menu_login, .menu_quickbar, .profile_block, table#collectionitems, div.global-body-content > div, div.header , div.article {
-			background: var(--moduleBg);
+			background: var(--blackBg);
 		}
 		.messagebox, .popupbox, div.recommend_block, div.wikitoc, input, textarea, .profile_title, .img-thumbnail, .menutab-open, .mainmenutabs li a.open, .submenutabs li a.open,.innermoduletable th, .geekpoll {
 			background: var(--menuBg);
 		}
 		.bluebox {
-			background-color: var(--moduleBg);
+			background-color: var(--blackBg);
 		}
 		
 		/* borders & outlines */
@@ -725,16 +721,16 @@
 			border-top: var(--menuBorder);
 		}
 		.infobox {
-			background: var(--moduleBg);
+			background: var(--blackBg);
 			border: var(--moduleBorder);
 		}
 		
 		/* geekmail */
 		div.geekpages {
-			background: var(--moduleBg) !important;
+			background: var(--blackBg) !important;
 		}
 		tr:first-child > td.sf > div.sf, .gm_controlbar, div.geekpages:nth-child(2) {
-			background: var(--moduleBg) !important;
+			background: var(--blackBg) !important;
 			border: var(--moduleBorder) !important;
 		}
 		table.gm_messages:nth-child(2n) tr[style] {
@@ -778,7 +774,7 @@
 		
 		/* polls!  */
 		.outerpoll {
-			background: var(--moduleBg);	
+			background: var(--blackBg);	
 			}
 		.geekpoll {
 			background-color: var(--menuBg);
@@ -837,7 +833,7 @@
 		
 		/* blogposts */
 		.blog_post {
-			background: var(--moduleBg) !important;
+			background: var(--blackBg) !important;
 		}
 		
 		
@@ -856,7 +852,7 @@
 
 		/* Flag or Tip */
 		div[style*="background:lightsteelblue"] {
-			background-color: var(--moduleBg) !important;
+			background-color: var(--blackBg) !important;
 			color: var(--textColor);
 			div {
 				font-size: calc(var(--fontSize) / 1.14) !important;
