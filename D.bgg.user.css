@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.15
+@version        1.1.16
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -272,7 +272,7 @@
 		font-size: calc(var(--fontSize) / 1.23) !important;
 	}
 	/* text-colors */
-	h1, h2, h3, h4, h5, h6, p, .dropdown-header, .panel-heading, .text-muted, .summary-sale-item-price {
+	h1, h2, h3, h4, h5, h6, p, .dropdown-header, .panel-heading, .text-muted, .summary-sale-item-price, .close {
 		color: var(--textColor) !important;
 	}
 	.text-muted, .link-muted-color, .link-muted-border-muted {
@@ -468,7 +468,31 @@
 		color: var(--textColor) !important;
 		
 	}
+	.comment-count {
+		span, span.count {
+			color: var(--textPositive);
+		}
+		span:hover, span.count:hover {
+			color: var(--itemSelected) !important;
+		}
+	}
 	
+	/* User popup */
+	.popover-body {
+		color: var(--textColor) !important;
+		a#tab-thumbs.nav-link {
+			color: var(--textPositive);
+		}
+		a#tab-geekgold.nav-link {
+			color: var(--textGold);
+		}
+		.nav-link.active {
+			border-color: var(--itemSelected) !important;
+		}
+		.reaction-list::before, .reaction-list::after {
+			background-image: inherit;
+		}
+	}
 	
 	/* ---- Log Play ---- */
 	.modal.modal-fixed-right {
