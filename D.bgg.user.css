@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.14
+@version        1.1.15
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -17,32 +17,15 @@
 @var 	color		headerBg			'Header background'						#447
 @var	color		headerColor			'Header text'							#fff
 
-@var	color		moduleBorderColor	'Module border'							#444
+@var	color		quoteTitleBg		'Sub-Header background'					#446
+@var	color		quoteColor			'Subdued text'							#ccc
 
-@var	color		zebraBg2n			'Zebra background (even rows)'			#000
-@var	color		zebraBg2n1			'Zebra background (odd rows)'			#111
-
+@var	color		zebraBg2n1			'Zebra contrast'						#111
 @var	color		menuBg				'Menu & dropdown background'			#222
-@var	color		menuBorderColor		'Menu & dropdown borders'				#666
-
 @var	color		popupBg				'Pop-up background'						#333
 
-@var	color		buttonPrimaryBg		'Button background'						#777
-@var	color		buttonPrimary		'Button text'							#bbb
-
-== geeklists, forum ==
-@var	color		quoteTitleBg		'Quote title background'				#446
-@var	color		quoteTitleColor		'Quote title text '						#ddd
-@var	color		quoteBorderColor	'Quote borders'							#555
-@var	color		quoteBg				'Quote body background'					#222
-@var	color		quoteColor			'Quote body text'						#ccc
-
-== text colors ==
-@var	color		textPositive		'Text: positive values'					#4a4
-@var	color		textError			'Text: negative values, errors'			#f50
-@var	color		textGold			'Text: GeekGold'						#990
-
 == highlight borders ==
+@var	color		borderColor			'Color of regular borders'				#555
 @var	color		colorSelected		'Color of selected item'				#dc6
 @var	color		colorHighlight		'Color of highlighted item(s)'			#bbd
 
@@ -51,6 +34,13 @@
 @var	checkbox	linkUnderline		'Link underline?'						0
 @var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
 
+== "fixed" text colors ==
+@var	color		textPositive		'Text: positive values'					#4a4
+@var	color		textError			'Text: negative values, errors'			#f50
+@var	color		textGold			'Text: GeekGold'						#990
+@var	color		buttonPrimaryBg		'Button background'						#777
+@var	color		buttonPrimary		'Button text'							#bbb
+
 == fonts ==
 @var	range		fontSize			"Font Size (basic text)"				[15,10,20,1,"px"]
 @var	select		fontFamily			"Font Family"							["verdana*", "arial", "sans-serif", "proportional", "default"]
@@ -58,8 +48,6 @@
 == options ==
 @var	checkbox	maxWidth			'Use full screen width?'				1
 @var	checkbox	fpRowBottomBorder	'Border separator in modules?'			0
-@var	checkbox	announcementHide	'Hide announcements?'					0
-@var	checkbox	contestHide			'Hide contests and results?'			0
 @var	checkbox	geekpreviewHide		'Hide geekpreviews (GenCon, Essen)?'	0
 @var	checkbox	promotedVideoHide	'Hide promoted videos on game pages?'	1
 @var	checkbox	recommendationsHide	'Hide recommended "Fans Also Like"?'	1
@@ -88,19 +76,19 @@
 		--linkUnderlineStyle: linkUnderlineStyle;
 		--maxWidth: maxWidth;
 		--menuBg: menuBg;
-		--menuBorder: 1px solid menuBorderColor;
-		--moduleBorder: 1px solid moduleBorderColor;
+		--menuBorder: 1px solid borderColor;
+		--moduleBorder: 1px solid borderColor;
 		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
-		--quoteTitleColor: quoteTitleColor;
-		--quoteBg: quoteBg;
+		--quoteTitleColor: textColor;
+		--quoteBg: menuBg;
 		--quoteColor: quoteColor;
-		--quoteBorder: 1px solid quoteBorderColor;
+		--quoteBorder: 1px solid borderColor;
 		--textColor: textColor;
 		--textError: textError;	
 		--textGold: textGold;
 		--textPositive: textPositive;
-		--zebraBg2n: zebraBg2n;
+		--zebraBg2n: blackBg;
 		--zebraBg2n1: zebraBg2n1;
 	}
 	
@@ -233,16 +221,6 @@
 
 	/* ====--------  BGG Front page  --------==== */
 	/* hide specific modules if set */
-	if announcementHide {
-		.spotlight_red {
-			display: none !important;
-		}
-	}
-	if contestHide {
-		.spotlight_orange {
-			display: none !important;
-		}
-	}
 	if geekpreviewHide {
 		div.geekcentral_module > center > a[href*="/geekpreview"]{
 		    display: none;
