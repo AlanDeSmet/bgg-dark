@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.16
+@version        1.1.17
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -32,7 +32,17 @@
 == links ==
 @var	color		linkColor			'Links'									#88d
 @var	checkbox	linkUnderline		'Link underline?'						0
-@var	select		linkUnderlineStyle	'Link underline style'					["dashed","dotted*","double","initial","inherit","solid","wavy"]
+
+== fonts ==
+@var	range		fontSize			"Font Size (basic text)"				[15,10,20,1,"px"]
+@var	select		fontFamily			"Font Family"							["verdana*", "arial", "sans-serif", "proportional", "default"]
+
+== options ==
+@var	checkbox	maxWidth			'Full screen width?'					1
+@var	checkbox	floatLeftNav		'Float left navigator lists?'			1
+@var	checkbox	geekpreviewHide		'Hide geekpreviews (GenCon, Essen)?'	0
+@var	checkbox	promotedVideoHide	'Hide promoted videos on game pages?'	1
+@var	checkbox	recommendationsHide	'Hide recommended "Fans Also Like"?'	1
 
 == "fixed" text colors ==
 @var	color		textPositive		'Text: positive values'					#4a4
@@ -40,18 +50,6 @@
 @var	color		textGold			'Text: GeekGold'						#990
 @var	color		buttonPrimaryBg		'Button background'						#777
 @var	color		buttonPrimary		'Button text'							#bbb
-
-== fonts ==
-@var	range		fontSize			"Font Size (basic text)"				[15,10,20,1,"px"]
-@var	select		fontFamily			"Font Family"							["verdana*", "arial", "sans-serif", "proportional", "default"]
-
-== options ==
-@var	checkbox	maxWidth			'Use full screen width?'				1
-@var	checkbox	fpRowBottomBorder	'Border separator in modules?'			0
-@var	checkbox	geekpreviewHide		'Hide geekpreviews (GenCon, Essen)?'	0
-@var	checkbox	promotedVideoHide	'Hide promoted videos on game pages?'	1
-@var	checkbox	recommendationsHide	'Hide recommended "Fans Also Like"?'	1
-@var	checkbox	floatLeftNav		'Float left navigator lists?'			1
 
 
 ==/UserStyle== */
@@ -73,7 +71,6 @@
 		--linkHover: colorSelected;
 		--linkSelected: colorSelected;
 		--linkVisited: colorHighlight;
-		--linkUnderlineStyle: linkUnderlineStyle;
 		--maxWidth: maxWidth;
 		--menuBg: menuBg;
 		--menuBorder: 1px solid borderColor;
@@ -296,7 +293,11 @@
 	
 	/* frontpage: zebra striped modules */
 	.geekcentral {
-		tr.moduleRow {
+		.media-header {
+			border-bottom: 1px solid;
+		}
+		.media-cell {
+			border: var(--moduleBorder);
 			&:nth-child(2n) {
 				background: var(--zebraBg2n);
 			}
@@ -305,11 +306,7 @@
 			}
 		}
 	}
-	if fpRowBottomBorder {
-		.geekcentral tr.moduleRow {
-			border-bottom: var(--moduleBorder);
-		}
-	}
+	
 	/* zebra striped tables */
 	table.salesreport tr.odd, .table-striped tr:nth-child(2n), .table-condensed tr:nth-child(2n), div.wrapper tr:nth-child(2n), .collection_table > tbody > tr:nth-child(2n), tr[bgcolor="#FFFFFF"] {
 		background: var(--zebraBg2n);
@@ -619,10 +616,10 @@
 		}
 		if linkUnderline {
 			a {
-				text-decoration: underline var(--linkUnderlineStyle);
+				text-decoration: underline "solid";
 			}
 			a:hover {
-				text-decoration: underline var(--linkUnderlineStyle) !important;
+				text-decoration: underline "solid" !important;
 			}
 		}
 		else {
