@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.17
+@version        1.1.18
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -47,9 +47,8 @@
 == "fixed" text colors ==
 @var	color		textPositive		'Text: positive values'					#4a4
 @var	color		textError			'Text: negative values, errors'			#f50
-@var	color		textGold			'Text: GeekGold'						#990
-@var	color		buttonPrimaryBg		'Button background'						#777
-@var	color		buttonPrimary		'Button text'							#bbb
+@var	color		buttonBg			'Button background'						#777
+@var	color		buttonColor			'Button text'							#bbb
 
 
 ==/UserStyle== */
@@ -57,10 +56,11 @@
 @-moz-document domain("boardgamegeek.com"), domain("bgg.cc"), domain("rpggeek.com"), domain("videogamegeek.com") {
 	:root {
 		--blackBg: blackBg;
-		--borderNew: solid 2px colorHighlight;
-		--borderSelected: solid 2px colorSelected;
-		--buttonPrimaryBg: buttonPrimaryBg;
-		--buttonPrimary: buttonPrimary;
+		--borderBasic: 1px solid borderColor;
+		--borderNew: 2px solid colorHighlight;
+		--borderSelected: 2px solid colorSelected;
+		--buttonBg: buttonBg;
+		--buttonColor: buttonColor;
 		--floatLeftNav: floatLeftNav;
 		--fontFamily: fontFamily;
 		--fontSize: fontSize;
@@ -73,17 +73,14 @@
 		--linkVisited: colorHighlight;
 		--maxWidth: maxWidth;
 		--menuBg: menuBg;
-		--menuBorder: 1px solid borderColor;
-		--moduleBorder: 1px solid borderColor;
 		--popupBg: popupBg;
 		--quoteTitleBg: quoteTitleBg;
 		--quoteTitleColor: textColor;
 		--quoteBg: menuBg;
 		--quoteColor: quoteColor;
-		--quoteBorder: 1px solid borderColor;
 		--textColor: textColor;
 		--textError: textError;	
-		--textGold: textGold;
+		--textGold: #990;
 		--textPositive: textPositive;
 		--zebraBg2n: blackBg;
 		--zebraBg2n1: zebraBg2n1;
@@ -120,13 +117,13 @@
 		color: var(--headerColor);
 	}
 	.btn-primary, .badge-primary {
-		background: var(--buttonPrimaryBg);
-		border-color: var(--buttonPrimaryBg);
-		color: var(--buttonPrimary);
+		background: var(--buttonBg);
+		border-color: var(--buttonBg);
+		color: var(--buttonColor);
 	}
 	.btn-primary:hover {
-		background: var(--buttonPrimaryBg);
-		border-color: var(--buttonPrimaryBg);
+		background: var(--buttonBg);
+		border-color: var(--buttonBg);
 		color: var(--linkHover);
 	}
 	.btn-default:not(.active):not(:disabled), .btn-default:not(.active):not(:disabled):focus, .btn-default:not(.active):not(:disabled):active, .btn-default:not(.active):not(:disabled):visited, .summary-item-tag a, .summary-item-pagination.pagination > li > a, .summary-item-pagination.pagination > li > span, .summary-file-type a {
@@ -137,7 +134,7 @@
 		color: var(--textColor) !important;
 	}
 	.btn-subtle {
-		background: var(--buttonPrimaryBg);
+		background: var(--buttonBg);
 		filter: opacity(80%);
 	}
 	.btn-default:not(.active):not(:disabled):hover {
@@ -173,7 +170,7 @@
 	/* navigation bar borders */
 	.global-secondary-nav-section, .geeksidebar-section {
 		background: var(--menuBg);
-		border: var(--moduleBorder);
+		border: var(--borderBasic);
 	}
 	
 	/* headers */
@@ -202,12 +199,12 @@
 	}
 	/* list item separators */
 	ul.global-secondary-nav-links > li {
-		 border-bottom: var(--menuBorder);
+		 border-bottom: var(--borderBasic);
 	}
 	
 	/* "+" marker */
 	.glyphicon-plus {
-		color: var(--buttonPrimary);
+		color: var(--buttonColor);
 		font-size: 0.70em !important;
 	}
 	
@@ -228,7 +225,7 @@
 	.geekcentral-controls {
 		background-color: var(--menuBg);
 		.geekcentral-controls__edit-link {
-			color: var(--buttonPrimary);
+			color: var(--buttonColor);
 		}
 	}
 
@@ -244,7 +241,7 @@
 	}
 	.panel-default > .panel-heading, .panel-primary > .panel-heading {
 		background: var(--headerBg);
-		border: var(--moduleBorder);
+		border: var(--borderBasic);
 		color: var(--headerColor);
 	}
 	.panel-header-sm {
@@ -297,7 +294,7 @@
 			border-bottom: 1px solid;
 		}
 		.media-cell {
-			border: var(--moduleBorder);
+			border: var(--borderBasic);
 			&:nth-child(2n) {
 				background: var(--zebraBg2n);
 			}
@@ -323,7 +320,7 @@
 		background: var(--menuBg);
 	}
 	.table-bordered tbody tr td, .table-bordered tbody tr th {
-		border: var(--menuBorder);
+		border: var(--borderBasic);
 	}
 
 	/* game pages */
@@ -349,7 +346,7 @@
 	
 	/* game forum table */
 	.summary-border {
-		border-bottom: var(--moduleBorder);
+		border-bottom: var(--borderBasic);
 		.summary-item:nth-child(2n) {
 			background-color: var(--zebraBg2n);
 		}
@@ -361,7 +358,7 @@
 	/* image gallery & file comment quotes */
 	gg-markup-quote {
 		background: var(--quoteBg) !important;
-		border: var(--quoteBorder) !important;
+		border: var(--borderBasic) !important;
 		color: var(--quoteColor) !important;
 	}
 	
@@ -389,9 +386,9 @@
 	/* media sidebar */
 	.media-sidebar {
 		background-color: var(--quoteBg) !important;
-		border: var(--menuBorder) !important;
+		border: var(--borderBasic) !important;
 		btn-group {
-			border-bottom-color: var(--menuBorder) !important;
+			border-bottom-color: var(--borderBasic) !important;
 		}
 		.btn-secondary {
 			color: var(--textColor) !important;
@@ -416,11 +413,11 @@
 		button {
 			color: var(--textColor) !important;
 		}
-		border: var(--menuBorder);
+		border: var(--borderBasic);
 	}
 	.popover {
 		background-color: var(--menuBg);
-		border: var(--menuBorder);
+		border: var(--borderBasic);
 	}
 	gg-license-editable {
 		background-color: var(--blackBg) !important;
@@ -433,12 +430,12 @@
 	}
 	.c-container {
 		background: var(--blackBg) !important;
-		border: var(--moduleBorder) !important;
+		border: var(--borderBasic) !important;
 		color: var(--textColor);
 	
 		.form-control {
 			background: var(--menuBg) !important;
-			border: var(--menuBorder) !important;
+			border: var(--borderBasic) !important;
 			color: var(--textColor);
 		}
 		label {
@@ -449,12 +446,12 @@
  			border-left: 2px solid #ddd;
 			border-right: 2px solid #999;
 			border-bottom: 2px solid #999;
-			background-color: var(--buttonPrimaryBg) !important;
+			background-color: var(--buttonBg) !important;
 			color: var(--textColor);
 		}
 	}
 	gg-comment {
-		border: var(--moduleBorder) !important;
+		border: var(--borderBasic) !important;
 	}
 	.comment-header {
 		.user-info {
@@ -571,19 +568,19 @@
 		
 		/* borders & outlines */
 		.menu_login, .menu_quickbar, .bluebox, div.header, div.recommend_block, div.article, div.comment_toolbar {
-			border: var(--menuBorder);
+			border: var(--borderBasic);
 		}
 		/* article borders */
 		div {
 			.article {
 				dl {
-					border-bottom: var(--menuBorder);
+					border-bottom: var(--borderBasic);
 				}
 				dd.left {
-					border-right: var(--menuBorder);
+					border-right: var(--borderBasic);
 				}
 				dd.right, dd.commands {
-					border-left: var(--menuBorder);
+					border-left: var(--borderBasic);
 				}
 			}
 			.subbed {
@@ -691,13 +688,13 @@
 		}
 		.modulecommands option {
 			background: var(--menuBg);
-			border: var(--menuBorder);
+			border: var(--borderBasic);
 		}
 
 		/* tables */
 		.collection_table th, .forum_table th, .forum_index_table th {
 			color: var(--headerColor);
-			outline: var(--menuBorder);
+			outline: var(--borderBasic);
 		}
 		.forum_table, .forum_index_table {
 			tr:nth-child(2n) {
@@ -709,7 +706,7 @@
 			td {
 				background-color: transparent !important;
 				color: var(--textColor);
-				outline: var(--moduleBorder);
+				outline: var(--borderBasic);
 				border-bottom: none;
 			}
 		}
@@ -725,11 +722,11 @@
 			background: var(--headerBg);
 		}
 		#header {
-			border-top: var(--menuBorder);
+			border-top: var(--borderBasic);
 		}
 		.infobox {
 			background: var(--blackBg);
-			border: var(--moduleBorder);
+			border: var(--borderBasic);
 		}
 		
 		/* geekmail */
@@ -738,7 +735,7 @@
 		}
 		tr:first-child > td.sf > div.sf, .gm_controlbar, div.geekpages:nth-child(2) {
 			background: var(--blackBg) !important;
-			border: var(--moduleBorder) !important;
+			border: var(--borderBasic) !important;
 		}
 		table.gm_messages:nth-child(2n) tr[style] {
 			background: var(--zebraBg2n1) !important;
@@ -749,8 +746,8 @@
 
 		/* collection */
 		.collection_table td {
-			border-left: var(--moduleBorder);
-			border-top: var(--moduleBorder);
+			border-left: var(--borderBasic);
+			border-top: var(--borderBasic);
 		}
 		.editfield:hover {
 			background: var(--popupBg);
@@ -821,13 +818,13 @@
 		.quotetitle {
 			color: var(--quoteTitleColor);
 			background: var(--quoteTitleBg);
-			border: var(--quoteBorder);
+			border: var(--borderBasic);
 			border-bottom: none;
 		}
 		.quote {
 			color: var(--quoteColor);
 			background: var(--quoteBg);
-			border: var(--quoteBorder);
+			border: var(--borderBasic);
 		}
 
 		/* recommend pop-up */
@@ -853,7 +850,7 @@
 					
 		/* ratings & buttons */
 		a.comment_button, .comment_button.ng-binding, .rating[style*="background:white"] {
-			background: var(--buttonPrimaryBg) !important;
+			background: var(--buttonBg) !important;
 			color: var(--buttonColor);
 		}
 
@@ -889,10 +886,10 @@
  			border-left: 2px solid #ddd;
 			border-right: 2px solid #999;
 			border-bottom: 2px solid #999;
-			background-color: var(--buttonPrimaryBg) !important;
+			background-color: var(--buttonBg) !important;
 		}
 		button, .btn, .smallerfont[type="button"], input[type="reset"], input[type="submit"], input[type="button"] {
-			background-color: var(--buttonPrimaryBg) !important;
+			background-color: var(--buttonBg) !important;
 		}
 		textarea[style] {
 			width:100% !important;
