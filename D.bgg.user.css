@@ -274,8 +274,8 @@
 	}
 	
 	/* links */
-	a, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a {
-		color: var(--linkColor) !important;
+	a, a:link, .nav-tabs-more-dropdown a, .summary-image-item .summary-item-title a, .panel-body-toolbar > a, .advertisement-text-body a, .btn.btn-text-link, .btn.btn-text-link.active, .quickbar-pagination button.btn, .global-header-nav-primary .dropdown-menu li a, .panel-inline-links > a:link:not(.btn), .global-footer-item a, .nav.nav-tabs > li > a, .panel-expandable .expandable-body a:link {
+		color: var(--linkColor);
 	}
 	ul.global-secondary-nav-links a, .panel-title, .panel-body, .ng-binding, .link-muted-border-muted, .question  {
 		color: var(--textColor) !important;
@@ -286,6 +286,9 @@
 	}
 	a.selected {
 		color: var(--linkSelected) !important;
+	}
+	.panel-expandable .expandable-body a:visited {
+		color: var(--linkVisited);
 	}
 	
 	/* frontpage: zebra striped modules */
