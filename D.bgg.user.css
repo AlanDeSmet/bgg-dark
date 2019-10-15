@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.18
+@version        1.1.19
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -326,6 +326,25 @@
 		border: var(--borderBasic);
 	}
 
+	/* sponsored contests */
+	.tgc-contest {
+		background-color: var(--blackBg);
+		div#gotgametext, div#prize {
+			color: var(--textColor);
+		}
+		div#contest, div#prize {
+			background-color: var(--menuBg);
+		}
+		div#prize {
+			li.award {
+				color: var(--itemSelected);
+			}
+			li.award_desc {
+				color: var(--textColor);
+			}
+		}
+	}
+	
 	/* game pages */
 	if promotedVideoHide {
 		promotedvideos-module {
@@ -777,8 +796,7 @@
 				color: var(--quoteColor);
 			}
 		}
-	
-		
+				
 		/* polls!  */
 		.outerpoll {
 			background: var(--blackBg);	
@@ -856,6 +874,27 @@
 			background: var(--buttonBg) !important;
 			color: var(--buttonColor);
 		}
+		
+		/* collection rating backgrounds 3 6 7 8 9 10 */
+		.rating[style*="background:#ff6699"] {
+				background-color: #a38 !important;
+			}
+		.rating[style*="background:#9999ff"] {
+				background-color: #66f !important;
+			}
+		.rating[style*="background:#99ffff"] {
+				background: #69b !important;
+			}
+		.rating[style*="background:#66ff99"] {
+				background-color: #4a9 !important;
+			}
+		.rating[style*="background:#33cc99"] {
+				background-color: #097 !important;
+			}
+		.rating[style*="background:#00cc00"] {
+				background-color: #060 !important;
+			}
+		
 
 		/* Flag or Tip */
 		div[style*="background:lightsteelblue"] {
