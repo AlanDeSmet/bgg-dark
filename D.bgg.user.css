@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.19
+@version        1.1.20
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -14,7 +14,7 @@
 @var	color		blackBg				'BLACK Background'						#000
 @var	color		textColor			'Body text'								#eee
 
-@var 	color		headerBg			'Header background'						#447
+@var 	color		headerBg			'Header background'						#336
 @var	color		headerColor			'Header text'							#fff
 
 @var	color		quoteTitleBg		'Sub-Header background'					#446
@@ -30,7 +30,7 @@
 @var	color		colorHighlight		'Color of highlighted item(s)'			#bbd
 
 == links ==
-@var	color		linkColor			'Links'									#88d
+@var	color		linkColor			'Links'									#98f
 @var	checkbox	linkUnderline		'Link underline?'						0
 
 == fonts ==
@@ -875,21 +875,27 @@
 			color: var(--buttonColor);
 		}
 		
-		/* collection rating backgrounds 3 6 7 8 9 10 */
+		/* collection rating backgrounds 3 4 5 6 7 8 9 10 */
 		.rating[style*="background:#ff6699"] {
-				background-color: #a38 !important;
+				background-color: #a27 !important;
+			}
+		.rating[style*="background:#ff66cc"] {
+				background-color: #a29 !important;
+			}
+		.rating[style*="background:#cc99ff"] {
+				background-color: #73b !important;
 			}
 		.rating[style*="background:#9999ff"] {
-				background-color: #66f !important;
+				background-color: #33a !important;
 			}
 		.rating[style*="background:#99ffff"] {
-				background: #69b !important;
+				background: #27a !important;
 			}
 		.rating[style*="background:#66ff99"] {
-				background-color: #4a9 !important;
+				background-color: #288 !important;
 			}
 		.rating[style*="background:#33cc99"] {
-				background-color: #097 !important;
+				background-color: #175 !important;
 			}
 		.rating[style*="background:#00cc00"] {
 				background-color: #060 !important;
