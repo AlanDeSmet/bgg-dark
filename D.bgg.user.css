@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           BGG Dark Mode
 @namespace      GrauGeist
-@version        1.1.20
+@version        1.1.21
 @description    Dark Mode for BoardGameGeek.com
 @author         GrauGeist
 @homepageURL	https://github.com/GrauGeist/bgg-dark
@@ -30,7 +30,7 @@
 @var	color		colorHighlight		'Color of highlighted item(s)'			#bbd
 
 == links ==
-@var	color		linkColor			'Links'									#98f
+@var	color		linkColor			'Links'									#a9f
 @var	checkbox	linkUnderline		'Link underline?'						0
 
 == fonts ==
@@ -901,6 +901,28 @@
 				background-color: #060 !important;
 			}
 		
+		/* collection status text */
+		.fortrade {
+			color: #fa7;
+		}
+		.preordered {
+			color: #afc;
+		}
+		.prevowned {
+			color: #aaa;
+		}
+		.wanted {
+			color: #df9;
+		}
+		.wanttobuy {
+			color: #7f5;
+		}
+		.wanttoplay {
+			color: #7af;
+		}
+		.wishlist {
+			color: #f7d;
+		}
 
 		/* Flag or Tip */
 		div[style*="background:lightsteelblue"] {
